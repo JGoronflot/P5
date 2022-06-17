@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700');
 
 *:focus {
-    outline: none !important;
-    border-color: grey !important;
-    box-shadow: none !important;
+    outline: none;
+    border-color: grey;
+    box-shadow: none;
 }
 
 body {
@@ -440,7 +440,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .form-contact .form-group input:focus, .form-contact .form-group textarea:focus {
-	border: 1px solid #bababa !important;
+	border: 1px solid #bababa;
 }
 
 .form-contact button {
@@ -470,7 +470,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .form-sign input:focus, .form-sign textarea:focus {
-	border: 1px solid #bababa !important;
+	border: 1px solid #bababa;
 }
 
 .form-sign button {
@@ -676,7 +676,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .comments .form-comment input:focus, .comments .form-comment textarea:focus {
-	border: 1px solid #bababa !important;
+	border: 1px solid #bababa;
 }
 
 .comments .form-comment button {
@@ -773,7 +773,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .form-add-post .form-group input:focus, .form-add-post .form-group textarea:focus {
-	border: 1px solid #bababa !important;
+	border: 1px solid #bababa;
 }
 
 .custom-file-input ~ .custom-file-label::after {
