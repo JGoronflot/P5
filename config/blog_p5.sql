@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 17 juin 2022 à 14:52
--- Version du serveur : 10.4.22-MariaDB
--- Version de PHP : 8.1.2
+-- Généré le : ven. 01 juil. 2022 à 01:22
+-- Version du serveur : 10.4.24-MariaDB
+-- Version de PHP : 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -41,12 +41,9 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`id`, `author`, `comment`, `comment_date`, `post_id`, `status`) VALUES
-(1, 'John Doe', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo illo animi consequatur error ab eum eius exercitationem suscipit. Incidunt culpa saepe a laborum voluptatum laboriosam placeat possimus aspernatur recusandae inventore.', '2022-04-24 01:05:32', 6, 1),
-(2, 'John Doe', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo illo animi consequatur error ab eum eius exercitationem suscipit. Incidunt culpa saepe a laborum voluptatum laboriosam placeat possimus aspernatur recusandae inventore.', '2022-04-24 01:05:44', 5, 1),
-(3, 'John Doe', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo illo animi consequatur error ab eum eius exercitationem suscipit. Incidunt culpa saepe a laborum voluptatum laboriosam placeat possimus aspernatur recusandae inventore.', '2022-04-24 01:05:54', 4, 1),
-(4, 'John Doe', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo illo animi consequatur error ab eum eius exercitationem suscipit. Incidunt culpa saepe a laborum voluptatum laboriosam placeat possimus aspernatur recusandae inventore.', '2022-04-24 01:06:20', 3, 1),
-(5, 'John Doe', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo illo animi consequatur error ab eum eius exercitationem suscipit. Incidunt culpa saepe a laborum voluptatum laboriosam placeat possimus aspernatur recusandae inventore.', '2022-04-24 01:06:27', 2, 1),
-(6, 'John Doe', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo illo animi consequatur error ab eum eius exercitationem suscipit. Incidunt culpa saepe a laborum voluptatum laboriosam placeat possimus aspernatur recusandae inventore.', '2022-04-24 01:06:37', 1, 1);
+(1, 'John Doe', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo illo animi consequatur error ab eum eius exercitationem suscipit. Incidunt culpa saepe a laborum voluptatum laboriosam placeat possimus aspernatur recusandae inventore.', '2022-06-10 01:13:32', 1, 1),
+(2, 'John Doe', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo illo animi consequatur error ab eum eius exercitationem suscipit. Incidunt culpa saepe a laborum voluptatum laboriosam placeat possimus aspernatur recusandae inventore.', '2022-06-10 01:13:32', 2, 1),
+(3, 'John Doe', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo illo animi consequatur error ab eum eius exercitationem suscipit. Incidunt culpa saepe a laborum voluptatum laboriosam placeat possimus aspernatur recusandae inventore.', '2022-06-10 01:13:32', 3, 1);
 
 -- --------------------------------------------------------
 
@@ -83,9 +80,9 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `title`, `content`, `author`, `creation_date`, `update_date`) VALUES
-(1, 'Microlead', 'Retrouvez des centaines de cours et de formations sur des dizaines de technologie différentes. Évaluez votre niveau facilement et rapidement grâce à des exercices, des projets et des qcm conçus par des experts du domaine.', 'Jimmy GORONFLOT', '2022-04-06 12:23:56', '2022-04-06 12:23:56'),
-(2, 'Manga++', 'Librairie en ligne, créer sur mesure pour un client libraire', 'Jimmy GORONFLOT', '2022-04-23 10:24:45', '2022-04-23 10:24:45'),
-(3, 'Blog', 'Blog qui répertorie toutes mes projets créés jusqu\'là', 'Jimmy GORONFLOT', '2022-04-24 00:00:00', '2022-04-24 00:00:00');
+(1, 'En 2021, Tesla a pulvérisé ses objectifs', 'Le constructeur américain de véhicules électriques haut de gamme Tesla a annoncé dimanche 2 janvier avoir livré près d\'un million de véhicules au cours de l\'année 2021, quasiment deux fois plus qu\'en 2020, faisant mieux que prévu malgré les difficultés mondiales d\'approvisionnement. Tesla a livré plus de 936.000 voitures, tous modèles confondus, en 2021, ce qui représente une croissance de 87,4% par rapport à l\'année précédente. Le constructeur fait ainsi bien mieux que l\'objectif annoncé en janvier dernier, de faire croître ses livraisons de 50% en moyenne par an pendant plusieurs années.\r\n\r\nLe groupe, qui a choisi de déménager son siège de Palo Alto (Californie) à Austin (Texas), a vendu 911.208 exemplaires de ses modèles 3 et Y, et 24.964 véhicules de ses modèles luxe S et X (vendus respectivement 90.000 et 100.000 dollars pièce). Sur le seul quatrième trimestre, ce sont 308.600 voitures qui ont été livrées, en hausse de 0,9% par rapport au même trimestre l\'an passé. Un peu plus tôt dans l\'année, au deuxième trimestre, Tesla avait franchi, pour la première fois, le seuil des 200.000 voitures livrées (201.250).', 'Jimmy GORONFLOT', '2022-06-10 01:13:32', '2022-06-10 01:13:32'),
+(2, 'Python nommé langage de l’année 2021', 'Alors que le classement TIOBE du mois de décembre 2021 laissait présager que le langage C# serait élu langage de l’année 2021, c’est finalement Python qui arrive en première place. Il est ainsi sacré langage de l’année 2021. En effet, le langage Python observe une croissance de 1,86 % entre janvier 2021 et janvier 2022, contre une hausse de 1,73 % pour C#.\r\n\r\nDéjà élu langage de l’année 2020 avec une croissance de 2,01 %, Python avait commencé l’année 2021 à la troisième place du classement avant de supplanter Java et C pour devenir numéro 1 de l’index, en octobre 2021. À noter que c’est la cinquième fois que Python s’inscrit comme le langage de l’année puisque c’était également le cas en 2018, 2010 et 2007.\r\n\r\nSelon l’index TIOBE, la popularité de Python n’est pas prête de s’essouffler : « il possède actuellement plus de 1 % d’avance sur les autres langages de programmation. Le record de tous les temps obtenu par Java avec une croissance de 26,49 % en 2001 est encore loin, mais Python a tout pour devenir le langage de programmation standard dans de nombreux domaines ».\r\n\r\nL’index TIOBE s’est attaché à observer les mouvements des langages les plus prometteurs en 2021. Parmi les changements notoires pour cette année :\r\n\r\nSwift passe de la 13ème à la 10ème place,\r\nGo passe de la 14ème à la 13ème place,\r\nRust a gardé la 26ème place du classement,\r\nJulia passe de la 23ème à la 28ème place,\r\nKotlin passe de la 40ème à la 29ème place,\r\nDart passe de la position 25 à 37,\r\nTypeScript passe de la position 42 à 49.\r\nAinsi, TIOBE note qu’à part les langages Swift et Go, le classement ne s’attend pas à voir apparaître de nouveaux langages dans le top 5, ni même dans le top 3.', 'Jimmy GORONFLOT', '2022-06-10 01:13:32', '2022-06-10 01:13:32'),
+(3, 'Z Event 2021 : plus de 10 millions d’euros pour Action contre la faim', 'Record battu. Pour la sixième édition de l’événement caritatif – la cinquième sous le nom de « Z Event » –, les plus grandes stars françaises du streaming de jeux vidéo ont récolté auprès de leurs fans plus de 10 millions d’euros de dons en faveur d’Action contre la faim, a annoncé l’un des organisateurs, Adrien « ZeratoR » Nougaret, lundi 1er novembre.\r\n\r\nPlus d’une cinquantaine de personnalités, principalement utilisatrices du site de streaming Twitch, ainsi que quelques stars de YouTube, étaient rassemblées au Palais des congrès de La Grande-Motte (Hérault). Elles s’y sont relayées entre vendredi 18 heures et dimanche soir – soit pendant environ cinquante heures – pour s’affronter lors de parties multijoueur, relever des défis et échanger avec leur communauté de fans.\r\n\r\n« Le choix de l’association Action contre la faim se justifie par des valeurs communes avec notre organisation, mais aussi parce que c’est une association d’envergure, capable de gérer des montants importants. Elle est par ailleurs connue des collégiens et des lycéens, notre public », précise Alexandre Dachary, cocréateur de l’événement. Comme l’année précédente, cette édition a été saluée par Emmanuel Macron sur Twitter : « En se mobilisant tous ensemble, on peut bouger des montagnes. (…) Un grand bravo. »\r\n\r\nEn 2020, le Z Event avait signé une véritable performance en récoltant plus de 5,7 millions d’euros au profit de l’ONG Amnesty International. En 2019, Z Event avait rapporté plus de 3,5 millions à l’Institut Pasteur. Les éditions précédentes avaient permis de reverser presque 1,1 million d’euros à Médecins sans frontières (2018), 500 000 euros à la Croix-Rouge (2017) et 170 000 euros à Save the Children en 2016 (l’événement était alors baptisé « Avengers France »).', 'Jimmy GORONFLOT', '2022-06-10 01:13:32', '2022-06-10 01:13:32');
 
 -- --------------------------------------------------------
 
@@ -146,7 +143,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT pour la table `mails`
@@ -158,7 +155,7 @@ ALTER TABLE `mails`
 -- AUTO_INCREMENT pour la table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT pour la table `users`

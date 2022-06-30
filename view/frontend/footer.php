@@ -9,8 +9,6 @@
 			<hr>
 			<ul>
 				<li><a href="index.php">Blog</a></li>
-				<li><a href="#">Portfolio</a></li>
-				<li><a href="#">A propos</a></li>
 				<li><a href="index.php#contact">Contact</a></li>
 				<li><a href="index.php?action=manageComments">Administration</a></li>
 			</ul>
