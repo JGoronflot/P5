@@ -13,7 +13,8 @@ $page = 'home';
    		<img src="public/img/photo.jpg" alt="">
    		<h1>Jimmy GORONFLOT</h1>
    		<p>
-			Étudiant chez Openclassrooms - Parcours PHP / Symfony
+			Le développeur qu’il vous faut !<br />
+			Étudiant à Openclassrooms - Parcours PHP / Symfony
 		</p>
    		
    		<a href="public/pdf/CV.pdf" target="_blank" class="open-cv"><i class="fal fa-file-pdf fa-lg"></i><span>Voir mon CV</span></a>
