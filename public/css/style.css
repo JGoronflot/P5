@@ -8,7 +8,7 @@
 
 body {
 	padding-top: 58px;
-	font-family: 'Montserrat', sans-serif;
+	font-family: Montserrat, sans-serif;
 }
 
 /*------- Navbar -------*/
@@ -34,6 +34,19 @@ body {
 	width: 48px;
 }
 
+.footer-content a {
+	color: #6d6d6d;
+	transition: 0.25s;
+}
+
+.profil-card ul li a {
+	color: #909090;
+}
+
+.profil-card ul li a:hover {
+	color: #707070;
+}
+
 .navbar .navbar-menu a {
 	color: #6d6d6d;
 	transition: 0.1s;
@@ -42,6 +55,15 @@ body {
 	padding: 5px;
 	margin: 0 5px;
 	font-weight: 700;
+}
+
+.comments-manage .action {
+	text-align: center;
+	width: 100px;
+}
+
+.comments-manage .action a {
+	margin: 0 1px;
 }
 
 .navbar .navbar-menu a:hover {
@@ -152,6 +174,15 @@ body {
 	justify-content: space-around;
 }
 
+.profil-card i, .profil-card span {
+	vertical-align: middle;
+	margin: 0 5px;
+}
+
+.post-view span {
+	color: #909090;
+}
+
 .footer-content .social span {
 	color: #6d6d6d;
 	font-size: 0.8rem;
@@ -159,6 +190,10 @@ body {
 
 .footer-content .newsletter {
 	text-align: right;
+}
+
+.form-add-post label {
+	color: #6d6d6d;
 }
 
 .footer-content .newsletter label {
@@ -180,6 +215,21 @@ body {
 	text-align: right;
 	width: 70%;
 	max-width: 250px;
+}
+
+.form-sign button {
+	background-size: 200% auto;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    background-color: #0099ff;
+    transition: 0.5s;
+    height: 40px;
+    cursor: pointer;
+}
+
+.form-sign button:hover {
+	background-position: right center;
 }
 
 .footer-content .newsletter button {
@@ -258,11 +308,6 @@ body {
 	transition: 0.2s;
 }
 
-.profil-card i, .profil-card span {
-	vertical-align: middle;
-	margin: 0 5px;
-}
-
 .profil-card ul {
 	display: flex;
 	padding: 0;
@@ -305,7 +350,6 @@ body {
 	background-size: 100%;
 	transition: background-size 0.5s;
 	filter: grayscale(1);
-	transition: 0.5s;
 }
 
 .preview-blog .lasts-posts .h-post:hover .thumbnail-post {
@@ -321,8 +365,28 @@ body {
 	font-size: 1.5rem;
 }
 
+.form-contact p {
+	color: #909090;
+}
+
 .preview-blog .lasts-posts .h-post .h-post-content p {
 	font-size: 0.9rem;
+}
+
+.post .infos .more a {
+	color: #0099ff;
+}
+
+.post .infos .more a:hover {
+	font-weight: 500;
+	text-decoration: none;
+}
+
+.post .infos .more a:before {
+	font-family: 'Font Awesome 5 Pro';
+	font-weight: 600;
+	content: '\f14c';
+	margin-right: 5px;
 }
 
 .preview-blog .lasts-posts .h-post .h-post-content a {
@@ -407,10 +471,6 @@ body {
 	padding: 60px 0;
 }
 
-.form-contact p {
-	color: #909090;
-}
-
 .form-contact label {
 	color: #6d6d6d;
 }
@@ -437,6 +497,10 @@ input[type=number]::-webkit-outer-spin-button {
 .form-contact  textarea::-webkit-scrollbar-thumb {
 	background-color: #e28f00;
 	border-radius: 5px;
+}
+
+.form-sign input:focus, .form-sign textarea:focus {
+	border: 1px solid #bababa;
 }
 
 .form-contact .form-group input:focus, .form-contact .form-group textarea:focus {
@@ -467,25 +531,6 @@ input[type=number]::-webkit-outer-spin-button {
 .form-sign label {
 	font-weight: 500;
 	font-size: 1.1rem;
-}
-
-.form-sign input:focus, .form-sign textarea:focus {
-	border: 1px solid #bababa;
-}
-
-.form-sign button {
-	background-size: 200% auto;
-    border: none;
-    border-radius: 3px;
-    color: white;
-    background-color: #0099ff;
-    transition: 0.5s;
-    height: 40px;
-    cursor: pointer;
-}
-
-.form-sign button:hover {
-	background-position: right center;
 }
 
 .form-sign .already {
@@ -534,9 +579,6 @@ input[type=number]::-webkit-outer-spin-button {
 	background-size: cover;
 }
 
-.post .thumbnail img {
-}
-
 .post .infos {
 	padding-left: 10px;
 }
@@ -554,22 +596,6 @@ input[type=number]::-webkit-outer-spin-button {
 .post .infos .more {
 	display: flex;
 	justify-content: space-between;
-}
-
-.post .infos .more a {
-	color: #0099ff;
-}
-
-.post .infos .more a:hover {
-	font-weight: 500;
-	text-decoration: none;
-}
-
-.post .infos .more a:before {
-	font-family: 'Font Awesome 5 Pro';
-	font-weight: 600;
-	content: '\f14c';
-	margin-right: 5px;
 }
 
 
@@ -597,7 +623,6 @@ input[type=number]::-webkit-outer-spin-button {
 	background-position: center;
 	transition: background-size 0.1s;
 	filter: grayscale(1);
-	transition: 0.2s;
 }
 
 .post-header-image:hover {
@@ -639,10 +664,6 @@ input[type=number]::-webkit-outer-spin-button {
 	background-color: #8c8c8c;
 }
 
-.post-view span {
-	color: #909090;
-}
-
 .post-view .content {
 	margin: 25px 0;
 	text-align: justify;
@@ -657,6 +678,20 @@ input[type=number]::-webkit-outer-spin-button {
 
 .comments {
 	margin: 0 auto 25px auto;
+}
+
+.form-add-post textarea::-webkit-scrollbar {
+	width: 5px;
+	background-color: #eaeaea;
+}
+
+.form-add-post  textarea::-webkit-scrollbar-thumb {
+	background-color: #e28f00;
+	border-radius: 5px;
+}
+
+.form-add-post .form-group input:focus, .form-add-post .form-group textarea:focus {
+	border: 1px solid #bababa;
 }
 
 .comments .form-comment textarea {
@@ -752,28 +787,10 @@ input[type=number]::-webkit-outer-spin-button {
 	color: #909090;
 }
 
-.form-add-post label {
-	color: #6d6d6d;
-}
-
 .form-add-post textarea {
 	height: 500px;
 	min-height: 150px;
 	max-height: 500px;
-}
-
-.form-add-post textarea::-webkit-scrollbar {
-	width: 5px;
-	background-color: #eaeaea;
-}
-
-.form-add-post  textarea::-webkit-scrollbar-thumb {
-	background-color: #e28f00;
-	border-radius: 5px;
-}
-
-.form-add-post .form-group input:focus, .form-add-post .form-group textarea:focus {
-	border: 1px solid #bababa;
 }
 
 .custom-file-input ~ .custom-file-label::after {
@@ -817,13 +834,4 @@ input[type=number]::-webkit-outer-spin-button {
 
 .comments-manage .author {
 	width: 200px;
-}
-
-.comments-manage .action {
-	text-align: center;
-	width: 100px;
-}
-
-.comments-manage .action a {
-	margin: 0 1px;
 }
