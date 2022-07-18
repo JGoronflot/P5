@@ -10,7 +10,8 @@ class PostManager extends Manager {
 
 	}
 
-	function getHomePosts(){
+	function getHomePosts()
+	{
 
 		$req = $this->db->query('SELECT * FROM posts ORDER BY creation_date DESC LIMIT 0, 3');
 
