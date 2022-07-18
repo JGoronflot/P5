@@ -4,17 +4,20 @@ require('controller/controller.php');
 
 session_start();
 
+$action = filter_input(INPUT_GET, 'action');
+$id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+
 try {
 	
-	if (isset($_GET['action'])) {
+	if (isset($action)) {
 
-		if ($_GET['action'] == 'listPosts') {
+		if ($action == 'listPosts') {
 
 	        listAllPosts();
 
-	    } elseif ($_GET['action'] == 'post') {
+	    } elseif ($action == 'post') {
 
-	        if (isset($_GET['id']) && $_GET['id'] > 0) {
+	        if (isset($id) && $id > 0) {
 
 	        	post();
 
@@ -24,7 +27,7 @@ try {
 
 	        }
 
-	    } elseif ($_GET['action'] == 'addPost') {
+	    } elseif ($action == 'addPost') {
 	            
 	    	if (!$_POST) {
 
@@ -43,9 +46,9 @@ try {
 	            }
 	    	}
 
-	    } elseif ($_GET['action'] == 'editPost') {
+	    } elseif ($action == 'editPost') {
 
-	    	if (isset($_GET['id']) && $_GET['id'] > 0) {
+	    	if (isset($id) && $id > 0) {
 
 	            if (!$_POST) {
 
@@ -71,9 +74,9 @@ try {
 
 	        }
 
-	    } elseif ($_GET['action'] == 'deletePost') {
+	    } elseif ($action == 'deletePost') {
 
-	    	if (isset($_GET['id']) && $_GET['id'] > 0) {
+	    	if (isset($id) && $id > 0) {
 
 	        	deletePost();
 
@@ -83,13 +86,13 @@ try {
 
 	        }
 
-	    } elseif ($_GET['action'] == 'submitComment') {
+	    } elseif ($action == 'submitComment') {
 
-	        if (isset($_GET['id']) && $_GET['id'] > 0) {
+	        if (isset($id) && $id > 0) {
 
 	            if (!empty($_POST['author']) && !empty($_POST['comment'])) {
 
-	                submitComment($_GET['id'], $_POST['author'], $_POST['comment']);
+	                submitComment($id, $_POST['author'], $_POST['comment']);
 
 	            } else {
 	                // Autre exception
@@ -102,7 +105,7 @@ try {
 
 	        }
 
-	    } elseif ($_GET['action'] == 'manageComments') {
+	    } elseif ($action == 'manageComments') {
 
 	    	if ($_SESSION['rank'] == 2) {
 	    		
@@ -114,9 +117,9 @@ try {
 
 	    	}
 
-	    } elseif ($_GET['action'] == 'approveComment') {
+	    } elseif ($action == 'approveComment') {
 
-	    	if (isset($_GET['id']) && $_GET['id'] > 0) {
+	    	if (isset($id) && $id > 0) {
 
 	        	approveComment();
 
@@ -126,9 +129,9 @@ try {
 
 	        }
 
-	    } elseif ($_GET['action'] == 'disapproveComment') {
+	    } elseif ($action == 'disapproveComment') {
 
-	    	if (isset($_GET['id']) && $_GET['id'] > 0) {
+	    	if (isset($id) && $id > 0) {
 
 	        	disapproveComment();
 
@@ -138,7 +141,7 @@ try {
 
 	        }
 
-	    } elseif ($_GET['action'] == 'login') {
+	    } elseif ($action == 'login') {
 
 	    	if (!$_POST) {
 
@@ -159,7 +162,7 @@ try {
 
 	    	}
 
-	    } elseif ($_GET['action'] == 'register') {
+	    } elseif ($action == 'register') {
 	            
 	    	if (!$_POST) {
 
@@ -179,7 +182,7 @@ try {
 	            }
 	    	}
 	    	
-	    } elseif ($_GET['action'] == 'logout') {
+	    } elseif ($action == 'logout') {
 	            
 	    	logoutUser();
 	    	

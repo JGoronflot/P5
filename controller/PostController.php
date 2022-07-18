@@ -27,10 +27,11 @@ function listAllPosts()
  */
 function post()
 {
+    $resultat = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
     $postManager = new PostManager();
     $commentManager = new CommentManager();
-    $post = $postManager->getPost($_GET['id']);
-    $comments = $commentManager->getComments($_GET['id']);
+    $post = $postManager->getPost($resultat);
+    $comments = $commentManager->getComments($resultat);
     require('view/frontend/postView.php');
 }
 
@@ -51,8 +52,9 @@ function addPost($author, $title, $content)
  */
 function editPost()
 {
+    $resultat = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
     $postManager = new PostManager();
-    $post = $postManager->editPost($_GET['id']);
+    $post = $postManager->editPost($resultat);
     require('view/frontend/editPostView.php');
 }
 
@@ -61,8 +63,9 @@ function editPost()
  */
 function confirmEditPost($author, $title, $content)
 {
+    $resultat = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
     $postManager = new PostManager();
-    $affectedLines = $postManager->confirmEditPost($_GET['id'], $author, $title, $content);
+    $affectedLines = $postManager->confirmEditPost($resultat, $author, $title, $content);
     if ($affectedLines === false) {
         throw new Exception("Impossible de modifier l'article !");
     }
@@ -73,7 +76,8 @@ function confirmEditPost($author, $title, $content)
  */
 function deletePost()
 {
+    $resultat = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
     $postManager = new PostManager();
-    $postdelete = $postManager->deletePost($_GET['id']);
+    $postdelete = $postManager->deletePost($resultat);
     header('Location: index.php?action=listPosts');
 }

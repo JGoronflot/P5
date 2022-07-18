@@ -2,6 +2,8 @@
 
 require_once 'model/CommentManager.php';
 
+$resultat = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+
 /**
  * Function to submit a comment
  */
@@ -21,8 +23,9 @@ function submitComment($postId, $author, $comment)
  */
 function approveComment()
 {
+    $resultat = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
     $commentManager = new CommentManager();
-    $commentapprove = $commentManager->approveComment($_GET['id']);
+    $commentapprove = $commentManager->approveComment($resultat);
     header('Location: index.php?action=manageComments');
 }
 
@@ -31,8 +34,9 @@ function approveComment()
  */
 function disapproveComment()
 {
+    $resultat = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
     $commentManager = new CommentManager();
-    $commentdelete = $commentManager->disapproveComment($_GET['id']);
+    $commentdelete = $commentManager->disapproveComment($resultat);
     header('Location: index.php?action=manageComments');
 }
 
