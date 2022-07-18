@@ -28,7 +28,7 @@ $page = 'admin';
                 ?>
                     <tr>
                         <th><?= $data['id'] ?></th>
-                        <td><?= strftime("%d/%m/%y", strtotime($data['comment_date'])) ?></td>
+                        <td><?= htmlentities(strftime("%d/%m/%y", strtotime($data['comment_date']))) ?></td>
                         <td>
                             <?php 
 
