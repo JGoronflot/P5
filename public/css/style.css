@@ -1,815 +1,816 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700');
 
 *:focus {
-    outline: none;
-    border-color: grey;
-    box-shadow: none;
+  outline: none;
+  border-color: grey;
+  box-shadow: none;
 }
 
 body {
-	padding-top: 58px;
-	font-family: Montserrat, sans-serif;
+  padding-top: 58px;
+  font-family: Montserrat, sans-serif;
 }
 
 /*------- Navbar -------*/
 
 .navbar {
-	position: fixed;
-	height: 60px;
-	top: 0;
-	width: 100%;
-	background-color: #3d3d3d;
-	padding: 0 10px 0 0;
-	font-family: 'Montserrat', sans-serif;
-	box-shadow: 0 0 10px #3d3d3d;
-	z-index: 999;
+  position: fixed;
+  height: 60px;
+  top: 0;
+  width: 100%;
+  background-color: #3d3d3d;
+  padding: 0 10px 0 0;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0 0 10px #3d3d3d;
+  z-index: 999;
 }
 
 .navbar-logo {
-	padding: 5px;
-	width: 200px;
+  padding: 5px;
+  width: 200px;
 }
 
 .navbar-logo img {
-	width: 48px;
+  width: 48px;
 }
 
 .footer-content a {
-	color: #6d6d6d;
-	transition: 0.25s;
+  color: #6d6d6d;
+  transition: 0.25s;
 }
 
 .profil-card ul li a {
-	color: #909090;
+  color: #909090;
 }
 
 .profil-card ul li a:hover {
-	color: #707070;
+  color: #707070;
 }
 
 .navbar .navbar-menu a {
-	color: #6d6d6d;
-	transition: 0.1s;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	padding: 5px;
-	margin: 0 5px;
-	font-weight: 700;
+  color: #6d6d6d;
+  transition: 0.1s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 5px;
+  margin: 0 5px;
+  font-weight: 700;
 }
 
 .comments-manage .action {
-	text-align: center;
-	width: 100px;
+  text-align: center;
+  width: 100px;
 }
 
 .comments-manage .action a {
-	margin: 0 1px;
+  margin: 0 1px;
 }
 
 .navbar .navbar-menu a:hover {
-	color: #e0e0e0;
-	text-decoration: none;
+  color: #e0e0e0;
+  text-decoration: none;
 }
 
 .navbar .navbar-menu .active {
-	color: #e0e0e0;
+  color: #e0e0e0;
 }
 
 .navbar .sign {
-	width: 200px;
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .navbar .sign .btn-signin {
-	color: #e0e0e0;
-	padding: 5px;
-	border-radius: 3px;
-	transition: 0.1s;
-	margin-left: 5px;
+  color: #e0e0e0;
+  padding: 5px;
+  border-radius: 3px;
+  transition: 0.1s;
+  margin-left: 5px;
 }
 
 .navbar .sign .btn-signin:hover {
-	background-color:  #0099ff;
-	text-decoration: none;
+  background-color: #0099ff;
+  text-decoration: none;
 }
 
 .navbar .sign .btn {
-	background-color: #3d3d3d;
-	color: #e0e0e0;
+  background-color: #3d3d3d;
+  color: #e0e0e0;
 }
 
 .navbar .sign .btn:active {
-	outline: none;
-	border: none;
+  outline: none;
+  border: none;
 }
 
 .navbar .sign .btn:focus {
-	outline: none;
-	border: none;
+  outline: none;
+  border: none;
 }
 
 .navbar .nav-my-profile:before {
-	font-family: 'Font Awesome 5 Pro';
-	content: '\f2bd';
-	margin-right: 5px;
+  font-family: 'Font Awesome 5 Pro';
+  content: '\f2bd';
+  margin-right: 5px;
 }
 
 .navbar .nav-manage-comments:before {
-	font-family: 'Font Awesome 5 Pro';
-	content: '\f086';
-	margin-right: 5px;
+  font-family: 'Font Awesome 5 Pro';
+  content: '\f086';
+  margin-right: 5px;
 }
 
 .navbar .nav-logs:before {
-	font-family: 'Font Awesome 5 Pro';
-	content: '\f46d';
-	margin-right: 5px;
+  font-family: 'Font Awesome 5 Pro';
+  content: '\f46d';
+  margin-right: 5px;
 }
 
 .navbar .nav-logout:before {
-	font-family: 'Font Awesome 5 Pro';
-	content: '\f011';
-	margin-right: 5px;
+  font-family: 'Font Awesome 5 Pro';
+  content: '\f011';
+  margin-right: 5px;
 }
 
 /*------- Footer -------*/
 
 .footer {
-	background-color: #3d3d3d;
-	padding: 15px;
+  background-color: #3d3d3d;
+  padding: 15px;
 }
 
 .footer-content {
-	margin: 0 auto;
+  margin: 0 auto;
 }
 
 .footer-content h1 {
-	color: #6d6d6d;
-	font-size: 1.5rem;
+  color: #6d6d6d;
+  font-size: 1.5rem;
 }
 
 .footer-content ul {
-	list-style: none;
-	padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .footer-content a {
-	color: #6d6d6d;
-	transition: 0.25s;
-} 
+  color: #6d6d6d;
+  transition: 0.25s;
+}
 
 .footer-content a:hover {
-	color: #e0e0e0;
-	text-decoration: none;
+  color: #e0e0e0;
+  text-decoration: none;
 }
 
 .footer-content .social {
-	text-align: center;
+  text-align: center;
 }
 
 .footer-content .social ul {
-	display: flex;
-	justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
 .profil-card i, .profil-card span {
-	vertical-align: middle;
-	margin: 0 5px;
+  vertical-align: middle;
+  margin: 0 5px;
 }
 
 .post-view span {
-	color: #909090;
+  color: #909090;
 }
 
 .footer-content .social span {
-	color: #6d6d6d;
-	font-size: 0.8rem;
+  color: #6d6d6d;
+  font-size: 0.8rem;
 }
 
 .footer-content .newsletter {
-	text-align: right;
+  text-align: right;
 }
 
 .form-add-post label {
-	color: #6d6d6d;
+  color: #6d6d6d;
 }
 
 .footer-content .newsletter label {
-	color: #6d6d6d;
+  color: #6d6d6d;
 }
 
 .footer-content .newsletter input {
-	text-align: right;
+  text-align: right;
 }
 
 .footer-content .newsletter input {
-	padding: 7px;
-	background-color: #303030;
-	color: #fff;
-	font-size: 1rem;
-	border: none;
-	border-radius: 5px 0 0 5px;
-	outline: none;
-	text-align: right;
-	width: 70%;
-	max-width: 250px;
+  padding: 7px;
+  background-color: #303030;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  text-align: right;
+  width: 70%;
+  max-width: 250px;
 }
 
 .form-sign button {
-	background-size: 200% auto;
-    border: none;
-    border-radius: 3px;
-    color: white;
-    background-color: #0099ff;
-    transition: 0.5s;
-    height: 40px;
-    cursor: pointer;
+  background-size: 200% auto;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  background-color: #0099ff;
+  transition: 0.5s;
+  height: 40px;
+  cursor: pointer;
 }
 
 .form-sign button:hover {
-	background-position: right center;
+  background-position: right center;
 }
 
 .footer-content .newsletter button {
-	width: 20%;
-	min-width: 34px;
-	padding: 7px 10px;
-	background-color: #303030;
-	color: #fff;
-	font-size: 1rem;
-	border: none;
-	border-radius: 0 5px 5px 0;
-	outline: none;
+  width: 20%;
+  min-width: 34px;
+  padding: 7px 10px;
+  background-color: #303030;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  outline: none;
 }
 
 .footer-content .newsletter button:hover {
-	background-image: linear-gradient(to right, #ffac1c, #f8a516, #f19d10, #e99608, #e28f00);
-	cursor: pointer;
+  background-image: linear-gradient(to right, #ffac1c, #f8a516, #f19d10, #e99608, #e28f00);
+  cursor: pointer;
 }
 
 /*-------- Home --------*/
 
 .header {
-	height: 300px;
-	position: relative;
-	background-image: url('../img/header.jpg');
+  height: 300px;
+  position: relative;
+  background-image: url('../img/header.jpg');
 }
 
 .profil-card {
-	background-color: #fff;
-	box-shadow: 0 5px 10px #bcbcbc;
-	padding: 10px;
-	border-radius: 5px;
-	margin: 0 auto;
-	text-align: center;
-	position: absolute;
-	bottom: -30%;
-	left: 0;
-	right: 0;
-	z-index: 998;
+  background-color: #fff;
+  box-shadow: 0 5px 10px #bcbcbc;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0 auto;
+  text-align: center;
+  position: absolute;
+  bottom: -30%;
+  left: 0;
+  right: 0;
+  z-index: 998;
 }
 
 .profil-card img {
-	width: 150px;
-	border-radius: 50%;
-	margin: 5px;
-	padding: 2px;
-	border: 2px solid #0099ff;
-	box-shadow: 0 0 7.5px #0099ff;
+  width: 150px;
+  border-radius: 50%;
+  margin: 5px;
+  padding: 2px;
+  border: 2px solid #0099ff;
+  box-shadow: 0 0 7.5px #0099ff;
 }
 
 .profil-card h1 {
-	font-size: 2rem;
-	color: #0099ff;
-	font-weight: 400;
+  font-size: 2rem;
+  color: #0099ff;
+  font-weight: 400;
 }
 
 .profil-card p {
-	color: #909090;
+  color: #909090;
 }
 
 .profil-card .open-cv {
-	color: #909090;
-	padding: 5px;
-	border: 1px solid #909090;
-	border-radius: 5px;
-	display: inline-block;
-	transition: 0.2s;
-	font-weight: 500;
+  color: #909090;
+  padding: 5px;
+  border: 1px solid #909090;
+  border-radius: 5px;
+  display: inline-block;
+  transition: 0.2s;
+  font-weight: 500;
 }
 
 .profil-card .open-cv:hover {
-	text-decoration: none;
-	color: #fff;
-	background-color: #0099ff;
-	border-color: #0099ff;
-	transition: 0.2s;
+  text-decoration: none;
+  color: #fff;
+  background-color: #0099ff;
+  border-color: #0099ff;
+  transition: 0.2s;
 }
 
 .profil-card ul {
-	display: flex;
-	padding: 0;
-	list-style: none;
-	justify-content: space-around;
-	margin: 5px auto 0 auto;
+  display: flex;
+  padding: 0;
+  list-style: none;
+  justify-content: space-around;
+  margin: 5px auto 0 auto;
 }
 
 .profil-card ul li a {
-	color: #909090;
+  color: #909090;
 }
 
 .profil-card ul li a:hover {
-	color: #707070;
+  color: #707070;
 }
 
 /*---- Preview blog -----*/
 
 .preview-blog .lasts-posts {
-	margin: 0 auto;
-	padding: 150px 0 60px 0;
-	display: flex;
-	justify-content: space-around;
-	flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 150px 0 60px 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .preview-blog .lasts-posts .h-post {
-	overflow: hidden;
-	box-shadow: 0 0 10px lightgrey;
-	padding: 0;
-	margin: 10px 0;
-	background-color: #fff;
-	position: relative;
-	padding-bottom: 48px;
+  overflow: hidden;
+  box-shadow: 0 0 10px lightgrey;
+  padding: 0;
+  margin: 10px 0;
+  background-color: #fff;
+  position: relative;
+  padding-bottom: 48px;
 }
 
 .preview-blog .lasts-posts .h-post .thumbnail-post {
-	height: 180px;
-	background-position: center;
-	background-size: 100%;
-	transition: background-size 0.5s;
-	filter: grayscale(1);
+  height: 180px;
+  background-position: center;
+  background-size: 100%;
+  transition: background-size 0.5s;
+  filter: grayscale(1);
 }
 
 .preview-blog .lasts-posts .h-post:hover .thumbnail-post {
-	background-size: 125%;
-	filter: grayscale(0);
+  background-size: 125%;
+  filter: grayscale(0);
 }
 
 .preview-blog .lasts-posts .h-post .h-post-content {
-	padding: 15px;
+  padding: 15px;
 }
 
 .preview-blog .lasts-posts .h-post .h-post-content h1 {
-	font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .form-contact p {
-	color: #909090;
+  color: #909090;
 }
 
 .preview-blog .lasts-posts .h-post .h-post-content p {
-	font-size: 0.9rem;
+  font-size: 0.9rem;
 }
 
 .post .infos .more a {
-	color: #0099ff;
+  color: #0099ff;
 }
 
 .post .infos .more a:hover {
-	font-weight: 500;
-	text-decoration: none;
+  font-weight: 500;
+  text-decoration: none;
 }
 
 .post .infos .more a:before {
-	font-family: 'Font Awesome 5 Pro';
-	font-weight: 600;
-	content: '\f14c';
-	margin-right: 5px;
+  font-family: 'Font Awesome 5 Pro';
+  font-weight: 600;
+  content: '\f14c';
+  margin-right: 5px;
 }
 
 .preview-blog .lasts-posts .h-post .h-post-content a {
-	color: #d68300;
-	text-decoration: none;
-	position: absolute;
-	bottom: 53px;
+  color: #d68300;
+  text-decoration: none;
+  position: absolute;
+  bottom: 53px;
 }
 
 .preview-blog .lasts-posts .h-post .h-post-infos {
-	display: flex;
-	background-color: #F7F7F7;
-	padding: 15px;
-	width: 100%;
-	justify-content: space-between;
-	position: absolute;
-	bottom: 0;
+  display: flex;
+  background-color: #F7F7F7;
+  padding: 15px;
+  width: 100%;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
 }
 
 .preview-blog .lasts-posts .h-post .h-post-infos span {
-	color: #909090;
-	font-size: 0.75rem;
+  color: #909090;
+  font-size: 0.75rem;
 }
 
 .preview-blog .lasts-posts .h-post .h-post-infos span i {
-	margin-right: 5px;
+  margin-right: 5px;
 }
 
 .preview-blog .lasts-posts .h-post .h-post-infos span:nth-of-type(2) i {
-	margin-left: 5px;
+  margin-left: 5px;
 }
 
 /*------ My degree ------*/
 
 .my-degree {
-	background-color: #7451eb;
-	color: #fff;
+  background-color: #7451eb;
+  color: #fff;
 }
 
 .my-degree .degree-content {
-	margin: 0 auto;
-	padding: 60px 0;
+  margin: 0 auto;
+  padding: 60px 0;
 }
 
 .my-degree .degree-content img {
-	display: block;
-	width: 500px;
-	margin-bottom: 25px;;
+  display: block;
+  width: 500px;
+  margin-bottom: 25px;
+  ;
 }
 
 .my-degree .degree-content h1 {
-	font-size: 1.75rem;
-	font-weight: 700;
+  font-size: 1.75rem;
+  font-weight: 700;
 }
 
 .my-degree .degree-content ul li {
-	list-style: none;
+  list-style: none;
 }
 
 .my-degree .degree-content ul li:before {
-	content: "\f7d9";
-  	font-family: 'Font Awesome 5 Pro';
-  	font-weight: 300;
-  	font-size: 18px;
-  	display: inline-block;
-  	width: 30px;
+  content: "\f7d9";
+  font-family: 'Font Awesome 5 Pro';
+  font-weight: 300;
+  font-size: 18px;
+  display: inline-block;
+  width: 30px;
 }
 
 .my-degree .degree-content ul li i {
-	color: #fff;
+  color: #fff;
 }
 
 .my-degree .degree-content a {
-	color: #fff;
+  color: #fff;
 }
 
 
 /*------- Contact -------*/
 
 .form-contact {
-	background-color: #f7f7f7;
-	padding: 60px 0;
+  background-color: #f7f7f7;
+  padding: 60px 0;
 }
 
 .form-contact label {
-	color: #6d6d6d;
+  color: #6d6d6d;
 }
 
-.form-contact input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    margin: 0; 
+.form-contact input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
 }
 
 .form-contact textarea {
-	height: 150px;
-	min-height: 150px;
-	max-height: 500px;
+  height: 150px;
+  min-height: 150px;
+  max-height: 500px;
 }
 
 .form-contact textarea::-webkit-scrollbar {
-	width: 5px;
-	background-color: #eaeaea;
+  width: 5px;
+  background-color: #eaeaea;
 }
 
-.form-contact  textarea::-webkit-scrollbar-thumb {
-	background-color: #e28f00;
-	border-radius: 5px;
+.form-contact textarea::-webkit-scrollbar-thumb {
+  background-color: #e28f00;
+  border-radius: 5px;
 }
 
 .form-sign input:focus, .form-sign textarea:focus {
-	border: 1px solid #bababa;
+  border: 1px solid #bababa;
 }
 
 .form-contact .form-group input:focus, .form-contact .form-group textarea:focus {
-	border: 1px solid #bababa;
+  border: 1px solid #bababa;
 }
 
 .form-contact button {
-    background-size: 200% auto;
-    background-color: #0099ff;
-    border: none;
-    border-radius: 3px;
-    color: white;
-    transition: 0.5s;
-    height: 40px;
-    cursor: pointer;
+  background-size: 200% auto;
+  background-color: #0099ff;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  transition: 0.5s;
+  height: 40px;
+  cursor: pointer;
 }
 
 .form-contact button:hover {
-	background-position: right center;
+  background-position: right center;
 }
 
 /*--- Login & Register ---*/
 
 .form-sign {
-	margin-top: 5%;
+  margin-top: 5%;
 }
 
 .form-sign label {
-	font-weight: 500;
-	font-size: 1.1rem;
+  font-weight: 500;
+  font-size: 1.1rem;
 }
 
 .form-sign .already {
-	color: #6d6d6d;
-	display: flex;
-	flex-direction: row-reverse;
+  color: #6d6d6d;
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 .btn-back-index {
-	color: #155724;
-	text-decoration: underline;
+  color: #155724;
+  text-decoration: underline;
 }
 
 .btn-back-index:hover {
-	color: #155724;
-	font-weight: 500
+  color: #155724;
+  font-weight: 500
 }
 
 /*-------- Posts --------*/
 
 .btn-add-post {
-	padding: 10px 15px;
-	background-size: 200% auto;
-    border: none;
-    border-radius: 3px;
-    color: white;
-    background-color: #0099ff;
-    transition: 0.5s;
+  padding: 10px 15px;
+  background-size: 200% auto;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  background-color: #0099ff;
+  transition: 0.5s;
 }
 
 .btn-add-post:hover {
-	text-decoration: none;
-	color: #fff;
-	background-position: right center;
+  text-decoration: none;
+  color: #fff;
+  background-position: right center;
 }
 
 .post {
-	display: flex;
-	margin: 50px auto;
-	padding: 0;
+  display: flex;
+  margin: 50px auto;
+  padding: 0;
 }
 
 .post .img-post {
-	height: 100%;
-	background-position: center;
-	background-size: cover;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
 }
 
 .post .infos {
-	padding-left: 10px;
+  padding-left: 10px;
 }
 
 .post .infos h1 {
-	font-weight: 500;
-	font-size: 1.8rem;
+  font-weight: 500;
+  font-size: 1.8rem;
 }
 
 .post .infos p {
-	text-align: justify;
-	margin: 10px 0;
+  text-align: justify;
+  margin: 10px 0;
 }
 
 .post .infos .more {
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 
 .post .infos .more span {
-	color: #909090;
+  color: #909090;
 }
 
 /*--------- Post ---------*/
 
 .btn-back-posts {
-	color: #0099ff;
+  color: #0099ff;
 }
 
 .btn-back-posts:hover {
-	text-decoration: none;
-	color: #0099ff;
-	font-weight: 500;
+  text-decoration: none;
+  color: #0099ff;
+  font-weight: 500;
 }
 
 .post-header-image {
-	width: 100%;
-	height: 400px;
-	margin-bottom: 25px;
-	background-size: 100%;
-	background-position: center;
-	transition: background-size 0.1s;
-	filter: grayscale(1);
+  width: 100%;
+  height: 400px;
+  margin-bottom: 25px;
+  background-size: 100%;
+  background-position: center;
+  transition: background-size 0.1s;
+  filter: grayscale(1);
 }
 
 .post-header-image:hover {
-	background-size: 105%;
-	filter: grayscale(0);
+  background-size: 105%;
+  filter: grayscale(0);
 }
 
 .post-view {
-	margin: 0 auto;
+  margin: 0 auto;
 }
 
 .post-view .admin-tools {
-	display: flex;
-	justify-content: space-between;
-	margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
 }
 
 .post-view .admin-tools .tool-delete {
-	color: #fff;
-	background-color: #0099ff;
-	padding: 5px;
-	border-radius: 3px;
+  color: #fff;
+  background-color: #0099ff;
+  padding: 5px;
+  border-radius: 3px;
 }
 
 .post-view .admin-tools .tool-delete:hover {
-	text-decoration: none;
-	background-color: #ad3939;
+  text-decoration: none;
+  background-color: #ad3939;
 }
 
 .post-view .admin-tools .tool-edit {
-	color: #fff;
-	background-color: #aaaaaa;
-	padding: 5px;
-	border-radius: 3px;
+  color: #fff;
+  background-color: #aaaaaa;
+  padding: 5px;
+  border-radius: 3px;
 }
 
 .post-view .admin-tools .tool-edit:hover {
-	text-decoration: none;
-	background-color: #8c8c8c;
+  text-decoration: none;
+  background-color: #8c8c8c;
 }
 
 .post-view .content {
-	margin: 25px 0;
-	text-align: justify;
+  margin: 25px 0;
+  text-align: justify;
 }
 
 .post-view .last-update {
-	display: flex;
-	flex-direction: row-reverse;
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 /*---- Comments ----*/
 
 .comments {
-	margin: 0 auto 25px auto;
+  margin: 0 auto 25px auto;
 }
 
 .form-add-post textarea::-webkit-scrollbar {
-	width: 5px;
-	background-color: #eaeaea;
+  width: 5px;
+  background-color: #eaeaea;
 }
 
-.form-add-post  textarea::-webkit-scrollbar-thumb {
-	background-color: #e28f00;
-	border-radius: 5px;
+.form-add-post textarea::-webkit-scrollbar-thumb {
+  background-color: #e28f00;
+  border-radius: 5px;
 }
 
 .form-add-post .form-group input:focus, .form-add-post .form-group textarea:focus {
-	border: 1px solid #bababa;
+  border: 1px solid #bababa;
 }
 
 .comments .form-comment textarea {
-	height: 100px;
-	min-height: 50px;
-	max-height: 500px;
+  height: 100px;
+  min-height: 50px;
+  max-height: 500px;
 }
 
 .comments .form-comment textarea::-webkit-scrollbar {
-	width: 5px;
-	background-color: #eaeaea;
+  width: 5px;
+  background-color: #eaeaea;
 }
 
-.comments .form-comment  textarea::-webkit-scrollbar-thumb {
-	background-color: #0099ff;
-	border-radius: 5px;
+.comments .form-comment textarea::-webkit-scrollbar-thumb {
+  background-color: #0099ff;
+  border-radius: 5px;
 }
 
 .comments .form-comment input:focus, .comments .form-comment textarea:focus {
-	border: 1px solid #bababa;
+  border: 1px solid #bababa;
 }
 
 .comments .form-comment button {
-    background-size: 200% auto;
-    border: none;
-    border-radius: 3px;
-    color: white;
-    background-color: #0099ff;
-    transition: 0.5s;
-    height: 40px;
-    cursor: pointer;
+  background-size: 200% auto;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  background-color: #0099ff;
+  transition: 0.5s;
+  height: 40px;
+  cursor: pointer;
 }
 
 .comments .form-comment button:hover {
-	background-position: right center;
+  background-position: right center;
 }
 
 .comment {
-	margin: 20px 0;
+  margin: 20px 0;
 }
 
 .comment div {
-	display: inline-block;
-	vertical-align: middle;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .comment .avatar {
-	border-radius: 50%;
-	box-shadow: 0 0 5px grey;
-	width: 48px;
-	margin-right: 5px;
+  border-radius: 50%;
+  box-shadow: 0 0 5px grey;
+  width: 48px;
+  margin-right: 5px;
 }
 
 .comment .author {
-	font-weight: 600;
+  font-weight: 600;
 }
 
 .comment .comment-date {
-	color: #909090;
+  color: #909090;
 }
 
-.comment .content  {
-	margin: 10px 0 10px 25px;
-	padding: 5px 0 5px 10px;
-	position: relative;
+.comment .content {
+  margin: 10px 0 10px 25px;
+  padding: 5px 0 5px 10px;
+  position: relative;
 }
 
 .comments .content:after {
-	content: '';
-	position: absolute;
-	left: 0px;
-	height: 90%;
-	top: 5%;
-	border-right: 2px solid #e28f00;
-	border-radius: 1px;
-} 
+  content: '';
+  position: absolute;
+  left: 0px;
+  height: 90%;
+  top: 5%;
+  border-right: 2px solid #e28f00;
+  border-radius: 1px;
+}
 
 /*------- Add Post -------*/
 
 .back-btn {
-	padding-top: 60px;
+  padding-top: 60px;
 }
 
 .top-bar-infos {
-	margin-top: 25px;
+  margin-top: 25px;
 }
 
 .form-add-post {
-	margin-bottom: 60px;
+  margin-bottom: 60px;
 }
 
 .form-add-post p {
-	color: #909090;
+  color: #909090;
 }
 
 .form-add-post textarea {
-	height: 500px;
-	min-height: 150px;
-	max-height: 500px;
+  height: 500px;
+  min-height: 150px;
+  max-height: 500px;
 }
 
-.custom-file-input ~ .custom-file-label::after {
-    content: 'Parcourir';
+.custom-file-input~.custom-file-label::after {
+  content: 'Parcourir';
 }
 
 .form-add-post button {
-    background-size: 200% auto;
-    border: none;
-    border-radius: 3px;
-    color: white;
-    background-color: #0099ff;
-    transition: 0.5s;
-    height: 40px;
-    cursor: pointer;
+  background-size: 200% auto;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  background-color: #0099ff;
+  transition: 0.5s;
+  height: 40px;
+  cursor: pointer;
 }
 
 .form-add-post button:hover {
-	background-position: right center;
+  background-position: right center;
 }
 
 /*-------- Admin --------*/
@@ -817,21 +818,21 @@ input[type=number]::-webkit-outer-spin-button {
 /*---- Comments ----*/
 
 .fa-check-circle {
-	color: #008709;
+  color: #008709;
 }
 
 .fa-times-circle {
-	color: #870000;
+  color: #870000;
 }
 
 .comments-manage {
-	margin: 0 auto;
+  margin: 0 auto;
 }
 
 .comments-manage th {
-	border-bottom: 1px;
+  border-bottom: 1px;
 }
 
 .comments-manage .author {
-	width: 200px;
+  width: 200px;
 }
