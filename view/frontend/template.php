@@ -6,7 +6,7 @@
 		<meta name="keywords" content="développeur,devloper,web,étudiant,openclassrooms">
 		<meta http-equiv="content-language" content="fr" />
 		<meta name="author" lang="fr" content="Jimmy GORONFLOT">
-		<title><?= $title ?></title>
+		<title><?= htmlentities($title) ?></title>
 		<link rel="icon" href="public/img/favicon.ico" />
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-6jHF7Z3XI3fF4XZixAuSu0gGKrXwoX/w3uFPxC56OtjChio7wtTGJWRW53Nhx6Ev" crossorigin="anonymous">
 		<link rel="stylesheet" href="vendor/bootstrap-4.1.3/css/bootstrap.min.css">
@@ -18,7 +18,7 @@
 
 		<?php include('navbar.php') ?>
 
-        <?= $content ?>
+        <?= htmlentities($content) ?>
 
         <?php include('footer.php') ?>
 

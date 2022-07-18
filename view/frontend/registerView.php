@@ -15,13 +15,13 @@ $page_size = 1;
         <?php if (isset($error)): ?>
             
         <div class="alert alert-danger" role="alert">
-            <span><?= $error ?></span>
+            <span><?= htmlentities($error) ?></span>
         </div>
 
         <?php elseif (isset($success)): ?>
 
         <div class="alert alert-success" role="alert">
-            <span><?= $success ?></span>
+            <span><?= htmlentities($success) ?></span>
             <br>    
             <a href="index.php?action=login" class="btn-back-index"><i class="fal fa-hand-point-right"></i> Redirection vers la page de connexion</a>
         </div>

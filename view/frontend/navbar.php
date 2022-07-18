@@ -12,7 +12,7 @@
 		<?php if (isset($_SESSION['id'])): ?>
 
 		<div class="btn-group">
-            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?= $_SESSION['username'] ?></button>
+            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?= htmlentities($_SESSION['username']) ?></button>
             <div class="dropdown-menu dropdown-menu-right">
                	<a class="dropdown-item nav-my-profile" href="#">Mon profil</a>
                	<div class="dropdown-divider"></div>

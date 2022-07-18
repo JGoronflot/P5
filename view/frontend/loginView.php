@@ -14,7 +14,7 @@ $page_size = 1;
         <?php if (isset($error)): ?>
             
         <div class="alert alert-danger ?>" role="alert">
-            <span><?= $error ?></span>
+            <span><?= htmlentities($error) ?></span>
         </div>
 
         <?php endif ?>

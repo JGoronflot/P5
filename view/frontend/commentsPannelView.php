@@ -27,15 +27,15 @@ $page = 'admin';
 
                 ?>
                     <tr>
-                        <th><?= $data['id'] ?></th>
-                        <td><?= htmlentities(strftime("%d/%m/%y", strtotime($data['comment_date']))) ?></td>
+                        <th><?= htmlentities($data['id']) ?></th>
+                        <td><?= strftime("%d/%m/%y", strtotime($data['comment_date'])) ?></td>
                         <td>
                             <?php 
 
                             if (strlen($data['author']) > 19) {
                                 $data['author'] = substr($data['author'], 0, 16) .'...';
 
-                                echo htmlspecialchars($data['author']);
+                                echo htmlentities($data['author']);
 
                             } else {
                                 echo htmlspecialchars($data['author']);
@@ -43,10 +43,10 @@ $page = 'admin';
 
                             ?>
                         </td>
-                        <td><?= $data['comment'] ?></td>
+                        <td><?= htmlentities($data['comment']) ?></td>
                         <td>
-                            <a href="index.php?action=approveComment&amp;id=<?= $data['id'] ?>"><i class="fas fa-check-circle fa-2x"></i></a>
-                            <a href="index.php?action=disapproveComment&amp;id=<?= $data['id'] ?>"><i class="fas fa-times-circle fa-2x"></i></a>
+                            <a href="index.php?action=approveComment&amp;id=<?= htmlentities($data['id']) ?>"><i class="fas fa-check-circle fa-2x"></i></a>
+                            <a href="index.php?action=disapproveComment&amp;id=<?= htmlentities($data['id']) ?>"><i class="fas fa-times-circle fa-2x"></i></a>
                         </td>
                     </tr>
                 <?php

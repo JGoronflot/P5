@@ -17,7 +17,7 @@ $page = 'blog';
         <?php if (isset($error)) { ?>
 
             <div class="alert alert-danger ?>" role="alert">
-                <span><?= htmlentities($error) ?></span>
+                <span><?= $error ?></span>
             </div>
             
         <?php } ?>

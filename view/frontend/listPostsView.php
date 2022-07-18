@@ -27,7 +27,7 @@ while ($data = $posts->fetch()){
     <div class="thumbnail col-md-3 col-sm-5">
 
         <?php if (file_exists('public/img/blog/thumbnails/' .$data['id'] . '.jpg')): ?>
-            <div class="img-post" style="background-image: url(public/img/blog/thumbnails/<?= $data['id'] ?>.jpg)"></div>
+            <div class="img-post" style="background-image: url(public/img/blog/thumbnails/<?= htmlentities($data['id']) ?>.jpg)"></div>
         <?php else: ?>
             <img src="public/img/blog/thumbnails/default.jpg" alt="">
         <?php endif ?>
@@ -40,7 +40,7 @@ while ($data = $posts->fetch()){
             if (strlen($data['title']) > 25) {
                 $data['title'] = substr($data['title'], 0, 40) .'...';
 
-                echo htmlspecialchars($data['title']);
+                echo htmlentities(htmlspecialchars($data['title']));
 
             } else {
                 echo htmlspecialchars($data['title']);
@@ -56,7 +56,7 @@ while ($data = $posts->fetch()){
 
                 $data['content'] = substr($data['content'], 0, 200) .'...';
 
-                echo nl2br(htmlspecialchars($data['content']));
+                echo htmlentities(nl2br(htmlspecialchars($data['content'])));
 
             } else {
 
@@ -68,9 +68,9 @@ while ($data = $posts->fetch()){
         </p>
         <div class="more">
             <div>
-                <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Lire plus</a>
+                <a href="index.php?action=post&amp;id=<?= htmlentities($data['id']) ?>">Lire plus</a>
             </div>
-            <span><?= $data['author'] .' - ' .strftime("%d %B %Y", strtotime($data['creation_date'])) ?></span>
+            <span><?= htmlentities($data['author']) .' - ' .strftime("%d %B %Y", strtotime($data['creation_date'])) ?></span>
         </div>
     </div>
 </div>
