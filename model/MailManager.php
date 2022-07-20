@@ -15,7 +15,7 @@ class MailManager extends Manager {
 		$sendmail = $this->db->prepare('INSERT INTO mails (name, f_name, email, message) VALUES (?, ?, ?, ?)');
 	    $affectedLines = $sendmail->execute(array($name, $f_name, $email, $message));
 
-	    $receiver = 'contact@avrgn.fr';
+	    $receiver = 'contact@blabla.fr';
         $name = htmlspecialchars($name);
         $f_name = htmlspecialchars($f_name);
        	$mail = htmlspecialchars($email);
