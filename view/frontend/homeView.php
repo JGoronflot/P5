@@ -34,7 +34,7 @@ $page = 'home';
 
 		?>
 		<div class="h-post col-12 col-lg-3">
-			<div class="thumbnail-post" style="background-image: url(public/img/blog/thumbnails/<?= $data['id'] ?>.jpg)"></div>
+			<div class="thumbnail-post" style="background-image: url(public/img/blog/thumbnails/<?= htmlentities($data['id']) ?>.jpg)"></div>
 			<div class="h-post-content">
 				<h1>
 					<?php 
@@ -42,10 +42,10 @@ $page = 'home';
 		            if (strlen($data['title']) > 50) {
 		                $data['title'] = substr($data['title'], 0, 50) .'...';
 
-		                echo htmlspecialchars($data['title']);
+		                echo htmlentities(htmlspecialchars($data['title']));
 
 		            } else {
-		                echo htmlspecialchars($data['title']);
+		                echo htmlentities(htmlspecialchars($data['title']));
 		            }
 
 		            ?>
@@ -57,21 +57,21 @@ $page = 'home';
 
 		                $data['content'] = substr($data['content'], 0, 260) .'...';
 
-		                echo nl2br(htmlspecialchars($data['content']));
+		                echo htmlentities(nl2br(htmlspecialchars($data['content'])));
 
 		            } else {
 
-		                echo nl2br(htmlspecialchars($data['content']));
+		                echo htmlentities(nl2br(htmlspecialchars($data['content'])));
 		                
 		            }
 
 		            ?>
 		        </p>
-				<a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Lire l'article</a>
+				<a href="index.php?action=post&amp;id=<?= htmlentities($data['id']) ?>">Lire l'article</a>
 			</div>
 			<div class="h-post-infos">
 				<span><i class="fas fa-user"></i><?= $data['author'] ?></span>
-				<span><?= strftime("%d %B %Y", strtotime($data['creation_date'])) ?><i class="fas fa-calendar-alt"></i></span>
+				<span><?= htmlentities(strftime("%d %B %Y", strtotime($data['creation_date']))) ?><i class="fas fa-calendar-alt"></i></span>
 			</div>
 		</div>
 
@@ -90,8 +90,8 @@ $page = 'home';
 
         <?php if (isset($_SESSION['mail_msg'])): ?>
             
-        <div class="alert alert-<?= $_SESSION['mail_msg'][1] ?> alert-explode" role="alert">
-            <span><?= $_SESSION['mail_msg'][0] ?></span>
+        <div class="alert alert-<?= htmlentities($_SESSION['mail_msg'][1]) ?> alert-explode" role="alert">
+            <span><?= htmlentities($_SESSION['mail_msg'][0]) ?></span>
         </div>
 
         <?php endif ?>
