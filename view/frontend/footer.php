@@ -1,8 +1,6 @@
-<div class="footer"
-<?php if (isset($page_size) AND $page_size == 1){
-	echo "style='position: absolute; bottom: 0;width: 100%;'";
-}?>
->
+<div class="footer" <?php if (isset($page_size) and $page_size == 1) {
+						echo "style='position: absolute; bottom: 0;width: 100%;'";
+					} ?>>
 	<div class="footer-content row col-md-8">
 		<div class="links col-md-6">
 			<h1>Navigation</h1>

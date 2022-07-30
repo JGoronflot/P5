@@ -1,22 +1,18 @@
 <?php
-
 $title = 'Se connecter';
 $description = '';
 $page = 'login';
 $page_size = 1;
-
 ?>
 
 <?php ob_start(); ?>
 
-<div class="form-sign" >
+<div class="form-sign">
     <form action="" method="POST" class="col-md-3 mx-auto">
-        <?php if (isset($error)): ?>
-            
-        <div class="alert alert-danger ?>" role="alert">
-            <span><?= htmlentities($error) ?></span>
-        </div>
-
+        <?php if (isset($error)) : ?>
+            <div class="alert alert-danger" role="alert">
+                <span><?= ($error) ?></span>
+            </div>
         <?php endif ?>
         <div class="row">
             <div class="form-group col-lg-12">

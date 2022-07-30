@@ -1,6 +1,6 @@
 <?php
 
-require_once 'model/MailManager.php';
+require_once '../model/MailManager.php';
 
 /**
  * Function to send a mail

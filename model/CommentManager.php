@@ -1,52 +1,52 @@
 <?php
 
-require_once('model/Manager.php');
+require_once('../model/Manager.php');
+require_once('../entity/Entity.php');
+require_once('../entity/Comment.php');
 
-class CommentManager extends Manager {
-
-	function __construct() {
-
+class CommentManager extends Manager
+{
+	function __construct()
+	{
 		$this->db = $this->dbConnect();
-
 	}
 
-	function getComments($postId){
-
-		$comments = $this->db->prepare('SELECT * FROM comments WHERE post_id = ? ORDER BY comment_date DESC');
-		$comments->execute(array($postId));
-
+	// Fonction to get a comment
+	function getComments($postId)
+	{
+		$comments = Comment::getFromPost($postId);
 		return $comments;
-
 	}
 
-	function getAllComments(){
-
-		$allcomments = $this->db->query('SELECT * FROM comments WHERE status =  0 ORDER BY comment_date DESC');
-
+	// Fonction to get all comments
+	function getAllComments()
+	{
+		$allcomments = Comment::getAllCommentsStatus0();
 		return $allcomments;
-
 	}
 
-	function submitComment($postId, $author, $comment){
-
-	    $submitcomment = $this->db->prepare('INSERT INTO comments (post_id, author, comment, comment_date) VALUES (?, ?, ?, NOW())');
-	    $affectedLines = $submitcomment->execute(array($postId, $author, $comment));
-
-	    return $affectedLines;
+	// Fonction to submit a comment
+	function submitComment($postId, $author, $message)
+	{
+		$comment = new Comment();
+		$comment->author = $author;
+		$comment->comment = $message;
+		$comment->post_id = $postId;
+		$comment->comment_date = date("y-m-d h:i:s");
+		$comment->save();
+		return $comment;
 	}
 
-	function approveComment($id){
-
+	// Fonction to approve a comment
+	function approveComment($id)
+	{
 		$approvecomment = $this->db->prepare('UPDATE comments SET status = 1 WHERE id = ?');
 		$affectedLines = $approvecomment->execute(array($id));
-
 	}
 
-	function disapproveComment($id){
-
-		$deletecomment = $this->db->prepare('DELETE FROM comments WHERE id = ?');
-		$affectedLines = $deletecomment->execute(array($id));
-
+	// Fonction to disapprove a comment
+	function disapproveComment($id)
+	{
+		Comment::getbyID($id)->remove();
 	}
-
 }

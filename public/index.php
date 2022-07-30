@@ -1,6 +1,6 @@
 <?php
 setlocale(LC_TIME, 'fr', 'fr_FR', 'fr_FR@euro', 'fr_FR.utf8', 'fr-FR', 'fra');
-require('controller/controller.php');
+require('../controller/controller.php');
 
 session_start();
 
@@ -27,7 +27,7 @@ try {
 
 			if (!$_POST) {
 
-				require('view/frontend/addPostView.php');
+				require('../view/frontend/addPostView.php');
 			} else {
 
 				if (!empty($_POST['author']) && !empty($_POST['title']) && !empty($_POST['content'])) {
@@ -115,7 +115,7 @@ try {
 
 			if (!$_POST) {
 
-				require('view/frontend/loginView.php');
+				require('../view/frontend/loginView.php');
 			} else {
 
 				if (!empty($_POST['username']) && !empty($_POST['password'])) {
@@ -124,14 +124,14 @@ try {
 				} else {
 
 					$error = 'Veuillez completer tous les champs !';
-					require('view/frontend/registerView.php');
+					require('../view/frontend/registerView.php');
 				}
 			}
 		} elseif ($action == 'register') {
 
 			if (!$_POST) {
 
-				require('view/frontend/registerView.php');
+				require('../view/frontend/registerView.php');
 			} else {
 
 				if (!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['password2'])) {
@@ -140,7 +140,7 @@ try {
 				} else {
 
 					$error = 'Veuillez completer tous les champs !';
-					require('view/frontend/registerView.php');
+					require('../view/frontend/registerView.php');
 				}
 			}
 		} elseif ($action == 'logout') {

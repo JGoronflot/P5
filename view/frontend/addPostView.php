@@ -11,17 +11,13 @@ $page = 'blog';
 <a href="index.php" class="btn-back-posts offset-md-3"><i class="far fa-chevron-left"></i> Retour à la liste des articles</a>
 <hr class="col-md-6 mx-auto">
 
-<div class="form-add-post" >
+<div class="form-add-post">
     <form action="index.php?action=addPost" method="POST" enctype="multipart/form-data" class="col-md-6 mx-auto">
-
         <?php if (isset($error)) { ?>
-
-            <div class="alert alert-danger ?>" role="alert">
+            <div class="alert alert-danger" role="alert">
                 <span><?= $error ?></span>
             </div>
-            
         <?php } ?>
-
         <p>Les champs indiqués par un asterisque (*) sont obligatoires.</p>
         <div class="row">
             <div class="form-group col-lg-12">

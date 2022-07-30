@@ -1,93 +1,69 @@
 <?php
 
-require_once('model/Manager.php');
+require_once('../model/Manager.php');
+require_once('../entity/Entity.php');
+require_once('../entity/Post.php');
 
-class PostManager extends Manager {
-
-	function __construct() {
-
+class PostManager extends Manager
+{
+	function __construct()
+	{
 		$this->db = $this->dbConnect();
-
 	}
 
+	// Fonction to get 3 lasts posts
 	function getHomePosts()
 	{
-
-		$req = $this->db->query('SELECT * FROM posts ORDER BY creation_date DESC LIMIT 0, 3');
-
-		return $req;
-		
+		$posts = Post::getLastestPosts(3);
+		return $posts;
 	}
 
-	function getAllPosts(){
-
-		$req = $this->db->query('SELECT * FROM posts ORDER BY creation_date DESC LIMIT 0, 5');
-
-		return $req;
-		
+	// Fonction to get all posts
+	function getAllPosts()
+	{
+		$posts = Post::getAll();
+		return $posts;
 	}
 
-	function getPost($postId){
-
-	    $req = $this->db->prepare('SELECT * FROM posts WHERE id = ?');
-	    $req->execute(array($postId));
-	    $post = $req->fetch();
-
-	    return $post;
-
+	// Fonction to get a post
+	function getPost($postId)
+	{
+		$post = Post::getbyID($postId);
+		return $post;
 	}
 
-	function addPost($author, $title, $content){
-
-		$addpost = $this->db->prepare('INSERT INTO posts (title, content, author) VALUES (?, ?, ?)');
-	    $affectedLines = $addpost->execute(array($title, $content, $author));
-	    $lastId = $this->db->lastInsertId();
-
-	    if (isset($_FILES['thumbnail']) AND !empty($_FILES['thumbnail']['name'])) {
-
-	    	$path = 'public/img/blog/thumbnails/' .$lastId .'.jpg';
-	    	move_uploaded_file($_FILES['thumbnail']['tmp_name'], $path);
-
-	    }
-
-	    header('location: index.php?action=listPosts');
-
+	// Fonction to add post
+	function addPost($author, $title, $content)
+	{
+		$post = new Post();
+		$post->title = $title;
+		$post->content = $content;
+		$post->author = $author;
+		$post->save();
+		if (isset($_FILES['thumbnail']) and !empty($_FILES['thumbnail']['name'])) {
+			$path = 'img/blog/thumbnails/' . $post->id . '.jpg';
+			move_uploaded_file($_FILES['thumbnail']['tmp_name'], $path);
+		}
+		header('location: index.php?action=listPosts');
 	}
 
-	function editPost($postId){
-
-	    $req = $this->db->prepare('SELECT * FROM posts WHERE id = ?');
-	    $req->execute(array($postId));
-	    $post = $req->fetch();
-
-	    return $post;
-
-	}
-
-	function confirmEditPost($postId, $author, $title, $content){
-
+	// Fonction to confirm edit post
+	function confirmEditPost($postId, $author, $title, $content)
+	{
 		$editpost = $this->db->prepare('UPDATE posts SET title = ?, content = ?, author = ?, update_date = NOW() WHERE id = ? ');
 		$affectedLines = $editpost->execute(array($title, $content, $author, $postId));
-
-		if (isset($_FILES['thumbnail'])  AND !empty($_FILES['thumbnail']['name'])) {
-
-	    	$path = 'public/img/blog/thumbnails/' .$postId .'.jpg';
-	    	move_uploaded_file($_FILES['thumbnail']['tmp_name'], $path);
-
-	    }
-
-		header('location: index.php?action=post&id=' .$postId);
-
+		if (isset($_FILES['thumbnail'])  and !empty($_FILES['thumbnail']['name'])) {
+			$path = 'img/blog/thumbnails/' . $postId . '.jpg';
+			move_uploaded_file($_FILES['thumbnail']['tmp_name'], $path);
+		}
+		header('location: index.php?action=post&id=' . $postId);
 	}
 
-	function deletePost($postId){
-
-		$deletepost = $this->db->prepare('DELETE FROM posts WHERE id = ?');
-		$affectedLines = $deletepost->execute(array($postId));
-
-		$path = 'public/img/blog/thumbnails/' .$postId .'.jpg';
+	// Fonction to delete post
+	function deletePost($postId)
+	{
+		Post::getbyID($postId)->remove();
+		$path = 'img/blog/thumbnails/' . $postId . '.jpg';
 		unlink($path);
-
 	}
-
 }

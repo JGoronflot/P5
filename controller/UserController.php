@@ -1,6 +1,6 @@
 <?php
 
-require_once 'model/UserManager.php';
+require_once '../model/UserManager.php';
 
 /**
  * Function to connect a user
@@ -11,7 +11,7 @@ function connectUser($username, $password)
     $userInfos = $userManager->connectUser($username, $password);
     if ($userInfos === false) {
         $error = 'Nom d\'utilisateur et/ou mot de passe incorrect :(';
-        require('view/frontend/loginView.php');
+        require('../view/frontend/loginView.php');
     } else {
         $_SESSION['id'] = $userInfos['id'];
         $_SESSION['username'] = $userInfos['username'];

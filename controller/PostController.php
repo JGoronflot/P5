@@ -1,6 +1,6 @@
 <?php
 
-require_once 'model/PostManager.php';
+require_once '../model/PostManager.php';
 
 /**
  * Function to list home posts
@@ -9,7 +9,7 @@ function listHomePosts()
 {
     $postManager = new PostManager();
     $posts = $postManager->getHomePosts();
-    require('view/frontend/homeView.php');
+    require('../view/frontend/homeView.php');
 }
 
 /**
@@ -19,7 +19,7 @@ function listAllPosts()
 {
     $postManager = new PostManager();
     $posts = $postManager->getAllPosts();
-    require('view/frontend/listPostsView.php');
+    require('../view/frontend/listPostsView.php');
 }
 
 /**
@@ -32,7 +32,7 @@ function post()
     $commentManager = new CommentManager();
     $post = $postManager->getPost($resultat);
     $comments = $commentManager->getComments($resultat);
-    require('view/frontend/postView.php');
+    require('../view/frontend/postView.php');
 }
 
 /**
@@ -53,9 +53,8 @@ function addPost($author, $title, $content)
 function editPost()
 {
     $resultat = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
-    $postManager = new PostManager();
-    $post = $postManager->editPost($resultat);
-    require('view/frontend/editPostView.php');
+    $post = Post::getByID($resultat);
+    require('../view/frontend/editPostView.php');
 }
 
 /**

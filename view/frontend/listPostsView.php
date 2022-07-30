@@ -1,87 +1,60 @@
 <?php
-
 $title = 'Blog - Accueil';
 $description = '';
 $page = 'blog';
-
 ?>
 
 <?php ob_start(); ?>
 
-<?php if (isset($_SESSION['id']) AND $_SESSION['rank'] == 2): ?>
-
+<?php if (isset($_SESSION['id']) and $_SESSION['rank'] == 2) : ?>
     <div class="top-bar-infos">
         <a href="index.php?action=addPost" class="btn-add-post offset-md-3">Ajouter un article</a>
         <hr class="col-md-6 mx-auto">
     </div>
-
 <?php endif ?>
-
-<?php 
-
-while ($data = $posts->fetch()){
-
+<?php
+foreach($posts as $post) {
 ?>
-
-<div class="post col-md-6">
-    <div class="thumbnail col-md-3 col-sm-5">
-
-        <?php if (file_exists('public/img/blog/thumbnails/' .$data['id'] . '.jpg')): ?>
-            <div class="img-post" style="background-image: url(public/img/blog/thumbnails/<?= htmlentities($data['id']) ?>.jpg)"></div>
-        <?php else: ?>
-            <img src="public/img/blog/thumbnails/default.jpg" alt="">
-        <?php endif ?>
-        
-    </div>
-    <div class="infos">
-        <h1>
-            <?php 
-
-            if (strlen($data['title']) > 25) {
-                $data['title'] = substr($data['title'], 0, 40) .'...';
-
-                echo htmlentities(htmlspecialchars($data['title']));
-
-            } else {
-                echo htmlspecialchars($data['title']);
-            }
-
-            ?>
-
-        </h1>
-        <p>
-            <?php 
-
-            if (strlen($data['content']) > 200) {
-
-                $data['content'] = substr($data['content'], 0, 200) .'...';
-
-                echo htmlentities(nl2br(htmlspecialchars($data['content'])));
-
-            } else {
-
-                echo nl2br(htmlspecialchars($data['content']));
-                
-            }
-
-            ?>    
-        </p>
-        <div class="more">
-            <div>
-                <a href="index.php?action=post&amp;id=<?= htmlentities($data['id']) ?>">Lire plus</a>
+    <div class="post col-md-6">
+        <div class="thumbnail col-md-3 col-sm-5">
+            <?php if (file_exists('img/blog/thumbnails/' . $post->id . '.jpg')) : ?>
+                <div class="img-post" style="background-image: url(img/blog/thumbnails/<?= ($post->id) ?>.jpg)"></div>
+            <?php else : ?>
+                <img src="img/blog/thumbnails/default.jpg" alt="">
+            <?php endif ?>
+        </div>
+        <div class="infos">
+            <h1>
+                <?php
+                if (strlen($post->title) > 25) {
+                    $post->title = substr($post->title, 0, 40) . '...';
+                    echo (htmlspecialchars($post->title));
+                } else {
+                    echo htmlspecialchars($post->title);
+                }
+                ?>
+            </h1>
+            <p>
+                <?php
+                if (strlen($post->content) > 200) {
+                    $post->content = substr($post->content, 0, 200) . '...';
+                    echo (nl2br(htmlspecialchars($post->content)));
+                } else {
+                    echo nl2br(htmlspecialchars($post->content));
+                }
+                ?>
+            </p>
+            <div class="more">
+                <div>
+                    <a href="index.php?action=post&amp;id=<?= ($post->id) ?>">Lire plus</a>
+                </div>
+                <span><?= ($post->author) . ' - ' . strftime("%d %B %Y", strtotime($post->creation_date)) ?></span>
             </div>
-            <span><?= htmlentities($data['author']) .' - ' .strftime("%d %B %Y", strtotime($data['creation_date'])) ?></span>
         </div>
     </div>
-</div>
-
 <?php
-
 }
-$posts->closeCursor();
-
 ?>
-
 
 <?php $content = ob_get_clean(); ?>
 

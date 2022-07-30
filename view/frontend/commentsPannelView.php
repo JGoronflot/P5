@@ -21,45 +21,36 @@ $page = 'admin';
                 </tr>
             </thead>
             <tbody>
-                <?php 
-
-                while ($data = $comments->fetch()){
-
+                <?php
+                foreach($comments as $comment) {
                 ?>
                     <tr>
-                        <th><?= htmlentities($data['id']) ?></th>
-                        <td><?= strftime("%d/%m/%y", strtotime($data['comment_date'])) ?></td>
+                        <th><?= ($comment->id) ?></th>
+                        <td><?= strftime("%d/%m/%y", strtotime($comment->comment_date)) ?></td>
                         <td>
-                            <?php 
+                            <?php
+                            if (strlen($comment->author) > 19) {
+                                $comment->author = substr($comment->author, 0, 16) . '...';
 
-                            if (strlen($data['author']) > 19) {
-                                $data['author'] = substr($data['author'], 0, 16) .'...';
-
-                                echo htmlentities($data['author']);
-
+                                echo ($comment->author);
                             } else {
-                                echo htmlspecialchars($data['author']);
+                                echo htmlspecialchars($comment->author);
                             }
-
                             ?>
                         </td>
-                        <td><?= htmlentities($data['comment']) ?></td>
+                        <td><?= ($comment->comment) ?></td>
                         <td>
-                            <a href="index.php?action=approveComment&amp;id=<?= htmlentities($data['id']) ?>"><i class="fas fa-check-circle fa-2x"></i></a>
-                            <a href="index.php?action=disapproveComment&amp;id=<?= htmlentities($data['id']) ?>"><i class="fas fa-times-circle fa-2x"></i></a>
+                            <a href="index.php?action=approveComment&amp;id=<?= ($comment->id) ?>"><i class="fas fa-check-circle fa-2x"></i></a>
+                            <a href="index.php?action=disapproveComment&amp;id=<?= ($comment->id) ?>"><i class="fas fa-times-circle fa-2x"></i></a>
                         </td>
                     </tr>
                 <?php
-
                 }
-                $comments->closeCursor();
-
                 ?>
             </tbody>
         </table>
     </div>
 </div>
-
 
 <?php $content = ob_get_clean(); ?>
 
