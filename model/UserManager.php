@@ -29,7 +29,6 @@ class UserManager extends Manager
 		$username_lenght = strlen($username);
 		if ($username_lenght <= 255) {
 			$user = User::getUser($username, $password);
-			var_dump($user);
 			if (!$user) {
 				if ($password == $password2) {
 					$user = new User();

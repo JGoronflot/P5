@@ -10,7 +10,6 @@ $resultat = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 function submitComment($postId, $author, $message)
 {
     $commentManager = new CommentManager();
-    var_dump($message);
     $affectedLines = $commentManager->submitComment($postId, $author, $message);
     if ($affectedLines === false) {
         throw new Exception("Impossible d'ajouter le commentaire !");
