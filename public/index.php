@@ -163,5 +163,5 @@ try {
 	}
 } catch (Exception $e) { // S'il y a eu une erreur, alors...
 
-	print_r('Erreur : ' . $e->getMessage());
+	echo 'Erreur : ' . $e->getMessage(); die;
 }
