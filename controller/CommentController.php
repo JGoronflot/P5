@@ -47,5 +47,5 @@ function manageComments()
 {
     $commentManager = new CommentManager(); // Création d'un objet
     $comments = $commentManager->getAllComments();
-    require('../view/frontend/commentsPannelView.php');
+    require '../view/frontend/commentsPannelView.php';
 }

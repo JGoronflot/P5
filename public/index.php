@@ -30,9 +30,9 @@ try {
 				require('../view/frontend/addPostView.php');
 			} else {
 
-				if (!empty($_POST['author']) && !empty($_POST['title']) && !empty($_POST['content'])) {
+				if (!empty(filter_input(INPUT_POST, 'author')) && !empty(filter_input(INPUT_POST, 'title')) && !empty(filter_input(INPUT_POST, 'content'))) {
 
-					addPost($_POST['author'], $_POST['title'], $_POST['content']);
+					addPost(filter_input(INPUT_POST, 'author'), filter_input(INPUT_POST, 'title'), filter_input(INPUT_POST, 'content'));
 				} else {
 
 					throw new Exception('Tous les champs ne sont pas remplis !');
@@ -47,9 +47,9 @@ try {
 					editPost();
 				} else {
 
-					if (!empty($_POST['author']) && !empty($_POST['title']) && !empty($_POST['content'])) {
+					if (!empty(filter_input(INPUT_POST, 'author')) && !empty(filter_input(INPUT_POST, 'title')) && !empty(filter_input(INPUT_POST, 'content'))) {
 
-						confirmEditPost($_POST['author'], $_POST['title'], $_POST['content']);
+						confirmEditPost(filter_input(INPUT_POST, 'author'), filter_input(INPUT_POST, 'title'), filter_input(INPUT_POST, 'content'));
 					} else {
 
 						$error = 'test';
@@ -73,9 +73,9 @@ try {
 
 			if (isset($id) && $id > 0) {
 
-				if (!empty($_POST['author']) && !empty($_POST['comment'])) {
+				if (!empty(filter_input(INPUT_POST, 'author')) && !empty(filter_input(INPUT_POST, 'comment'))) {
 
-					submitComment($id, $_POST['author'], $_POST['comment']);
+					submitComment($id, filter_input(INPUT_POST, 'author'), filter_input(INPUT_POST, 'comment'));
 				} else {
 					// Autre exception
 					throw new Exception('Tous les champs ne sont pas remplis !');
@@ -118,9 +118,9 @@ try {
 				require('../view/frontend/loginView.php');
 			} else {
 
-				if (!empty($_POST['username']) && !empty($_POST['password'])) {
+				if (!empty(filter_input(INPUT_POST, 'username')) && !empty(filter_input(INPUT_POST, 'password'))) {
 
-					connectUser($_POST['username'], $_POST['password']);
+					connectUser(filter_input(INPUT_POST, 'username'), filter_input(INPUT_POST, 'password'));
 				} else {
 
 					$error = 'Veuillez completer tous les champs !';
@@ -150,8 +150,8 @@ try {
 	} else {
 
 		if ($_POST) {
-
-			if (isset($_POST['send-email'])) {
+			$sendEmail = filter_input(INPUT_POST, 'send-email');
+			if (isset($sendEmail)) {
 
 				sendMail($_POST['name'], $_POST['f-name'], $_POST['email'], $_POST['subject'], $_POST['message']);
 			}
@@ -163,5 +163,5 @@ try {
 	}
 } catch (Exception $e) { // S'il y a eu une erreur, alors...
 
-	echo 'Erreur : ' . $e->getMessage();
+	print_r('Erreur : ' . $e->getMessage());
 }
