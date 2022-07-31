@@ -1,5 +1,5 @@
 # Projet 5 - Créez votre premier blog en PHP
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/9af99025a6c345a9972eb441d049e0b4)](https://www.codacy.com/gh/JGoronflot/P5/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=JGoronflot/P5&amp;utm_campaign=Badge_Grade)
+[![SymfonyInsight](https://insight.symfony.com/projects/3dcee305-2957-4316-9396-72875ee4cf6a/big.svg)](https://insight.symfony.com/projects/3dcee305-2957-4316-9396-72875ee4cf6a)
 
 ## Installation
 Pour utiliser ce blog, il faut suivre les étapes suivantes :
