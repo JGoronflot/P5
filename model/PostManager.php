@@ -40,7 +40,7 @@ class PostManager extends Manager
 		$post->content = $content;
 		$post->author = $author;
 		$post->save();
-		if (isset($_FILES['thumbnail']) and !empty($_FILES['thumbnail']['name'])) {
+		if (isset($_FILES['thumbnail']) && !empty($_FILES['thumbnail']['name'])) {
 			$path = 'img/blog/thumbnails/' . $post->id . '.jpg';
 			move_uploaded_file($_FILES['thumbnail']['tmp_name'], $path);
 		}
@@ -52,7 +52,7 @@ class PostManager extends Manager
 	{
 		$editpost = $this->db->prepare('UPDATE posts SET title = ?, content = ?, author = ?, update_date = NOW() WHERE id = ? ');
 		$affectedLines = $editpost->execute(array($title, $content, $author, $postId));
-		if (isset($_FILES['thumbnail'])  and !empty($_FILES['thumbnail']['name'])) {
+		if (isset($_FILES['thumbnail']) && !empty($_FILES['thumbnail']['name'])) {
 			$path = 'img/blog/thumbnails/' . $postId . '.jpg';
 			move_uploaded_file($_FILES['thumbnail']['tmp_name'], $path);
 		}

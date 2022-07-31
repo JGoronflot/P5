@@ -12,7 +12,7 @@ $page = 'blog';
 <a href="index.php" class="btn-back-posts offset-md-3"><i class="far fa-chevron-left"></i> Retour à la liste des articles</a>
 <hr class="col-md-6 mx-auto">
 <div class="post-view col-md-6">
-    <?php if (isset($_SESSION->id) and $_SESSION->rank == 2) : ?>
+    <?php if (isset($_SESSION->id) && $_SESSION->rank == 2) : ?>
         <div class="admin-tools">
             <a href="index.php?action=deletePost&amp;id=<?= ($post->id) ?>" class="tool-delete"><i class="far fa-trash"></i> Supprimer l'article</a>
             <a href="index.php?action=editPost&amp;id=<?= ($post->id) ?>" class="tool-edit"><i class="fal fa-marker"></i> Modifier l'article</a>

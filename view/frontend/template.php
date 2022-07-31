@@ -2,7 +2,7 @@
 <html lang="fr">
 	<head>
 		<meta charset="UTF-8">
-		<meta name="Description" content="<? $description ?>">
+		<meta name="Description" content="<?php $description ?>">
 		<meta name="keywords" content="développeur,devloper,web,étudiant,openclassrooms">
 		<meta http-equiv="content-language" content="fr" />
 		<meta name="author" lang="fr" content="Jimmy GORONFLOT">

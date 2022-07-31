@@ -6,7 +6,7 @@ $page = 'blog';
 
 <?php ob_start(); ?>
 
-<?php if (isset($_SESSION['id']) and $_SESSION['rank'] == 2) : ?>
+<?php if (isset($_SESSION['id']) && $_SESSION['rank'] == 2) : ?>
     <div class="top-bar-infos">
         <a href="index.php?action=addPost" class="btn-add-post offset-md-3">Ajouter un article</a>
         <hr class="col-md-6 mx-auto">

@@ -1,4 +1,4 @@
-<div class="footer" <?php if (isset($page_size) and $page_size == 1) {
+<div class="footer" <?php if (isset($page_size) && $page_size == 1) {
 						echo "style='position: absolute; bottom: 0;width: 100%;'";
 					} ?>>
 	<div class="footer-content row col-md-8">

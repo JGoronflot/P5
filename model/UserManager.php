@@ -17,7 +17,7 @@ class UserManager extends Manager
 	{
 		$username_connect = htmlspecialchars($username);
 		$mdp_connect = sha1($password);
-		if (!empty($username_connect) and !empty($mdp_connect)) {
+		if (!empty($username_connect) && !empty($mdp_connect)) {
 			$user = User::getUser($username_connect, $mdp_connect);
 			return $user;
 		}
