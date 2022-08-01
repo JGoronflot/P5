@@ -6,6 +6,7 @@ $page = 'home';
 
 <?php ob_start(); ?>
 
+<!-- Profile card -->
 <div class="header">
 	<div class="profil-card col-lg-4 col-md-8 col-sm-8 col-10">
 		<img src="img/photo.jpg" alt="">
@@ -22,6 +23,8 @@ $page = 'home';
 		</ul>
 	</div>
 </div>
+
+<!-- List post -->
 <div class="preview-blog">
 	<div class="lasts-posts col-lg-10 col-md-6">
 		<?php
@@ -64,6 +67,7 @@ $page = 'home';
 	</div>
 </div>
 
+<!-- Contact card -->
 <div class="form-contact" id="contact">
 	<form action="index.php" method="POST" class="col-10 col-lg-6 mx-auto">
 		<?php if (isset($_SESSION['mail_msg'])) : ?>
