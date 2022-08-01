@@ -28,9 +28,9 @@ foreach($posts as $post) {
                 <?php
                 if (strlen($post->title) > 25) {
                     $post->title = substr($post->title, 0, 40) . '...';
-                    echo (htmlspecialchars($post->title));
+                    echo '<a href="index.php?action=post&amp;id='.$post->id.'">'.htmlspecialchars($post->title).'</a>';
                 } else {
-                    echo htmlspecialchars($post->title);
+                    echo '<a href="index.php?action=post&amp;id='.$post->id.'">'.htmlspecialchars($post->title).'</a>';
                 }
                 ?>
             </h1>
@@ -45,9 +45,6 @@ foreach($posts as $post) {
                 ?>
             </p>
             <div class="more">
-                <div>
-                    <a href="index.php?action=post&amp;id=<?= ($post->id) ?>">Lire plus</a>
-                </div>
                 <span><?= ($post->author) . ' - ' . strftime("%d %B %Y", strtotime($post->creation_date)) ?></span>
             </div>
         </div>
