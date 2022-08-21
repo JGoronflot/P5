@@ -55,7 +55,7 @@ class Comment extends Entity {
     public static function getAllCommentsStatus0()
     {
       $db = new Connection();
-      $con = $db->db_connect()->prepare("SELECT * FROM comments WHERE status =  0 ORDER BY comment_date DESC");
+      $con = $db->dbConnect()->prepare("SELECT * FROM comments WHERE status =  0 ORDER BY comment_date DESC");
       $con->execute();
       
       $result = $con->fetchAll(PDO::FETCH_CLASS, 'Comment');
@@ -65,7 +65,7 @@ class Comment extends Entity {
     public static function getFromPost($postId)
     {
       $db = new Connection();
-      $con = $db->db_connect()->prepare("SELECT * FROM comments WHERE post_id = ? ORDER BY comment_date DESC");
+      $con = $db->dbConnect()->prepare("SELECT * FROM comments WHERE post_id = ? ORDER BY comment_date DESC");
       $con->bindValue(1, $postId, PDO::PARAM_INT);
       $con->execute();
       
@@ -76,7 +76,7 @@ class Comment extends Entity {
     public static function getByID($id)
     {
       $db = new Connection();
-      $con = $db->db_connect()->prepare("SELECT * FROM comments WHERE id = ?");
+      $con = $db->dbConnect()->prepare("SELECT * FROM comments WHERE id = ?");
       $con->bindValue(1, $id, PDO::PARAM_INT);
       $con->execute();
 

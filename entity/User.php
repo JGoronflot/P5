@@ -55,7 +55,7 @@ class User extends Entity {
     public static function getUser($username, $password)
     {
       $db = new Connection();
-      $con = $db->db_connect()->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
+      $con = $db->dbConnect()->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
       $con->execute(array($username, $password));
       $result = $con->fetch();
       return $result;

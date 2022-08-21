@@ -1,7 +1,7 @@
 <?php
 class Connection extends Entity {
 
-    public static function db_connect()
+    public static function dbConnect()
     {
       require('../config/db_config.php');
       try {

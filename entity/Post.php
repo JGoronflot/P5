@@ -51,7 +51,7 @@ class Post extends Entity {
     public static function getByID($id)
     {
       $db = new Connection();
-      $con = $db->db_connect()->prepare("SELECT * FROM posts WHERE id=?");
+      $con = $db->dbConnect()->prepare("SELECT * FROM posts WHERE id=?");
       $con->bindValue(1, $id, PDO::PARAM_INT);
       $con->execute();
 
@@ -63,7 +63,7 @@ class Post extends Entity {
     public static function getAll()
     {
       $db = new Connection();
-      $con = $db->db_connect()->prepare("SELECT * FROM posts");
+      $con = $db->dbConnect()->prepare("SELECT * FROM posts");
       $con->execute();
       
       $result = $con->fetchAll(PDO::FETCH_CLASS, 'Post');
@@ -73,7 +73,7 @@ class Post extends Entity {
     public static function getLastestPosts($int)
     {
       $db = new Connection();
-      $con = $db->db_connect()->prepare("SELECT * FROM posts ORDER BY creation_date DESC LIMIT ".$int);
+      $con = $db->dbConnect()->prepare("SELECT * FROM posts ORDER BY creation_date DESC LIMIT ".$int);
       $con->execute();
       
       $result = $con->fetchAll(PDO::FETCH_CLASS, 'Post');
@@ -83,7 +83,7 @@ class Post extends Entity {
     public function remove()
     {
       $db = new Connection();
-      $con = $db->db_connect()->prepare("DELETE FROM posts WHERE id=?");
+      $con = $db->dbConnect()->prepare("DELETE FROM posts WHERE id=?");
       $con->bindValue(1, $this->id, PDO::PARAM_INT);
       $con->execute();
     }
