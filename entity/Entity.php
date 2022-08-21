@@ -1,6 +1,6 @@
 <?php
 
-abstract class Entity {
+class Entity {
 
     public static $db;
     protected $tableName;

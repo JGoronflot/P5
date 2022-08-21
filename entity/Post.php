@@ -11,15 +11,47 @@ class Post extends Entity {
   
     public $author;
 
+    public function setID($id){
+      $this->id = $id;
+    }
+    public function getID(){
+      return $this->id;
+    }
+    public function setTitle($title){
+      $this->title = $title;
+    }
+    public function getTitle(){
+      return $this->title;
+    }
+    public function setContent($content){
+      $this->content = $content;
+    }
+    public function getContent(){
+      return $this->content;
+    }
+    public function setAuthor($author){
+      $this->author = $author;
+    }
+    public function getAuthor(){
+      return $this->author;
+    }
+    public function setCreationDate($creation_date){
+      $this->creation_date = $creation_date;
+    }
+    public function getCreationDate(){
+      return $this->creation_date;
+    }
+    public function setUpdateDate($update_date){
+      $this->update_date = $update_date;
+    }
+    public function getUpdateDate(){
+      return $this->update_date;
+    }
+
     public static function getByID($id)
     {
-      require('../config/db_config.php');
-      try {
-          $db = new \PDO('mysql:host=' .$db_infos['db']['db_host'] .';dbname=' .$db_infos['db']['db_name'], $db_infos['db']['db_username'], $db_infos['db']['db_password']);
-      } catch (\Exception $e) {
-          throw new \Exception('Error creating a database connection ');
-      }
-      $con = $db->prepare("SELECT * FROM posts WHERE id=?");
+      $db = new Connection();
+      $con = $db->db_connect()->prepare("SELECT * FROM posts WHERE id=?");
       $con->bindValue(1, $id, PDO::PARAM_INT);
       $con->execute();
 
@@ -30,13 +62,8 @@ class Post extends Entity {
 
     public static function getAll()
     {
-      require('../config/db_config.php');
-      try {
-          $db = new \PDO('mysql:host=' .$db_infos['db']['db_host'] .';dbname=' .$db_infos['db']['db_name'], $db_infos['db']['db_username'], $db_infos['db']['db_password']);
-      } catch (\Exception $e) {
-          throw new \Exception('Error creating a database connection ');
-      }
-      $con = $db->prepare("SELECT * FROM posts");
+      $db = new Connection();
+      $con = $db->db_connect()->prepare("SELECT * FROM posts");
       $con->execute();
       
       $result = $con->fetchAll(PDO::FETCH_CLASS, 'Post');
@@ -45,13 +72,8 @@ class Post extends Entity {
 
     public static function getLastestPosts($int)
     {
-      require('../config/db_config.php');
-      try {
-          $db = new \PDO('mysql:host=' .$db_infos['db']['db_host'] .';dbname=' .$db_infos['db']['db_name'], $db_infos['db']['db_username'], $db_infos['db']['db_password']);
-      } catch (\Exception $e) {
-          throw new \Exception('Error creating a database connection ');
-      }
-      $con = $db->prepare("SELECT * FROM posts ORDER BY creation_date DESC LIMIT ".$int);
+      $db = new Connection();
+      $con = $db->db_connect()->prepare("SELECT * FROM posts ORDER BY creation_date DESC LIMIT ".$int);
       $con->execute();
       
       $result = $con->fetchAll(PDO::FETCH_CLASS, 'Post');
@@ -60,13 +82,8 @@ class Post extends Entity {
 
     public function remove()
     {
-      require('../config/db_config.php');
-      try {
-          $db = new \PDO('mysql:host=' .$db_infos['db']['db_host'] .';dbname=' .$db_infos['db']['db_name'], $db_infos['db']['db_username'], $db_infos['db']['db_password']);
-      } catch (\Exception $e) {
-          throw new \Exception('Error creating a database connection ');
-      }
-      $con = $db->prepare("DELETE FROM posts WHERE id=?");
+      $db = new Connection();
+      $con = $db->db_connect()->prepare("DELETE FROM posts WHERE id=?");
       $con->bindValue(1, $this->id, PDO::PARAM_INT);
       $con->execute();
     }

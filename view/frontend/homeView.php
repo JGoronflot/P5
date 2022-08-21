@@ -31,33 +31,33 @@ $page = 'home';
 		foreach ($posts as $post) {
 		?>
 			<div class="h-post col-12 col-lg-3">
-				<div class="thumbnail-post" style="background-image: url(img/blog/thumbnails/<?= ($post->id) ?>.jpg)"></div>
+				<div class="thumbnail-post" style="background-image: url(img/blog/thumbnails/<?= ($post->getID()) ?>.jpg)"></div>
 				<div class="h-post-content">
 					<h1>
 						<?php
-						if (strlen($post->title) > 50) {
-							$post->title = substr($post->title, 0, 50) . '...';
-							echo (htmlspecialchars($post->title));
+						if (strlen($post->getTitle()) > 50) {
+							$post->title = substr($post->getTitle(), 0, 50) . '...';
+							echo (htmlspecialchars($post->getTitle()));
 						} else {
-							echo (htmlspecialchars($post->title));
+							echo (htmlspecialchars($post->getTitle()));
 						}
 						?>
 					</h1>
 					<p>
 						<?php
-						if (strlen($post->content) > 260) {
-							$post->content = substr($post->content, 0, 260) . '...';
-							echo (nl2br(htmlspecialchars($post->content)));
+						if (strlen($post->getContent()) > 260) {
+							$post->content = substr($post->getContent(), 0, 260) . '...';
+							echo (nl2br(htmlspecialchars($post->getContent())));
 						} else {
-							echo (nl2br(htmlspecialchars($post->content)));
+							echo (nl2br(htmlspecialchars($post->getContent())));
 						}
 						?>
 					</p>
-					<a href="index.php?action=post&amp;id=<?= ($post->id) ?>">Lire l'article</a>
+					<a href="index.php?action=post&amp;id=<?= ($post->getID()) ?>">Lire l'article</a>
 				</div>
 				<div class="h-post-infos">
-					<span><i class="fas fa-user"></i><?= $post->author ?></span>
-					<span><?= (strftime("%d %B %Y", strtotime($post->creation_date))) ?><i class="fas fa-calendar-alt"></i></span>
+					<span><i class="fas fa-user"></i><?= $post->getAuthor() ?></span>
+					<span><?= (strftime("%d %B %Y", strtotime($post->getCreationDate()))) ?><i class="fas fa-calendar-alt"></i></span>
 				</div>
 			</div>
 

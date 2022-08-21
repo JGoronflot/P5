@@ -17,8 +17,8 @@ foreach($posts as $post) {
 ?>
     <div class="post col-md-6">
         <div class="thumbnail col-md-3 col-sm-5">
-            <?php if (file_exists('img/blog/thumbnails/' . $post->id . '.jpg')) : ?>
-                <div class="img-post" style="background-image: url(img/blog/thumbnails/<?= ($post->id) ?>.jpg)"></div>
+            <?php if (file_exists('img/blog/thumbnails/' . $post->getID() . '.jpg')) : ?>
+                <div class="img-post" style="background-image: url(img/blog/thumbnails/<?= ($post->getID()) ?>.jpg)"></div>
             <?php else : ?>
                 <img src="img/blog/thumbnails/default.jpg" alt="">
             <?php endif ?>
@@ -26,26 +26,26 @@ foreach($posts as $post) {
         <div class="infos">
             <h1>
                 <?php
-                if (strlen($post->title) > 25) {
-                    $post->title = substr($post->title, 0, 40) . '...';
-                    echo '<a href="index.php?action=post&amp;id='.$post->id.'">'.htmlspecialchars($post->title).'</a>';
+                if (strlen($post->getTitle()) > 25) {
+                    $post->title = substr($post->getTitle(), 0, 40) . '...';
+                    echo '<a href="index.php?action=post&amp;id='.$post->getID().'">'.htmlspecialchars($post->getTitle()).'</a>';
                 } else {
-                    echo '<a href="index.php?action=post&amp;id='.$post->id.'">'.htmlspecialchars($post->title).'</a>';
+                    echo '<a href="index.php?action=post&amp;id='.$post->getID().'">'.htmlspecialchars($post->getTitle()).'</a>';
                 }
                 ?>
             </h1>
             <p>
                 <?php
-                if (strlen($post->content) > 200) {
-                    $post->content = substr($post->content, 0, 200) . '...';
-                    echo (nl2br(htmlspecialchars($post->content)));
+                if (strlen($post->getContent()) > 200) {
+                    $post->setContent(substr($post->getContent(), 0, 200) . '...');
+                    echo (nl2br(htmlspecialchars($post->getContent())));
                 } else {
-                    echo nl2br(htmlspecialchars($post->content));
+                    echo nl2br(htmlspecialchars($post->getContent()));
                 }
                 ?>
             </p>
             <div class="more">
-                <span><?= ($post->author) . ' - ' . strftime("%d %B %Y", strtotime($post->creation_date)) ?></span>
+                <span><?= ($post->getAuthor()) . ' - ' . strftime("%d %B %Y", strtotime($post->getCreationDate)) ?></span>
             </div>
         </div>
     </div>

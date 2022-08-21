@@ -3,6 +3,7 @@
 require_once('../model/Manager.php');
 require_once('../entity/Entity.php');
 require_once('../entity/Post.php');
+require_once('../entity/Connection.php');
 
 class PostManager extends Manager
 {
@@ -36,9 +37,9 @@ class PostManager extends Manager
 	function addPost($author, $title, $content)
 	{
 		$post = new Post();
-		$post->title = $title;
-		$post->content = $content;
-		$post->author = $author;
+		$post->setTitle($title);
+		$post->setContent($content);
+		$post->setAuthor($author);
 		$post->save();
 		if (isset($_FILES['thumbnail']) && !empty($_FILES['thumbnail']['name'])) {
 			$path = 'img/blog/thumbnails/' . $post->id . '.jpg';

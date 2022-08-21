@@ -2,6 +2,7 @@
 
 require_once('../model/Manager.php');
 require_once('../entity/Entity.php');
+require_once('../entity/Connection.php');
 require_once('../entity/Comment.php');
 
 class CommentManager extends Manager
@@ -29,10 +30,10 @@ class CommentManager extends Manager
 	function submitComment($postId, $author, $message)
 	{
 		$comment = new Comment();
-		$comment->author = $author;
-		$comment->comment = $message;
-		$comment->post_id = $postId;
-		$comment->comment_date = date("y-m-d h:i:s");
+		$comment->setAuthor($author);
+		$comment->setComment($message);
+		$comment->setPostID($postId);
+		$comment->setCommentDate(date("y-m-d h:i:s"));
 		$comment->save();
 		return $comment;
 	}

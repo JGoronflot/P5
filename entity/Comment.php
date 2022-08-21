@@ -15,15 +15,47 @@ class Comment extends Entity {
   
     public $status;
 
+    public function setID($id){
+      $this->id = $id;
+    }
+    public function getID(){
+      return $this->id;
+    }
+    public function setAuthor($author){
+      $this->author = $author;
+    }
+    public function getAuthor(){
+      return $this->author;
+    }
+    public function setComment($comment){
+      $this->comment = $comment;
+    }
+    public function getComment(){
+      return $this->comment;
+    }
+    public function setCommentDate($comment_date){
+      $this->comment_date = $comment_date;
+    }
+    public function getCommentDate(){
+      return $this->comment_date;
+    }
+    public function setPostID($post_id){
+      $this->post_id = $post_id;
+    }
+    public function getPostID(){
+      return $this->post_id;
+    }
+    public function setStatus($status){
+      $this->status = $status;
+    }
+    public function getStatus(){
+      return $this->status;
+    }
+
     public static function getAllCommentsStatus0()
     {
-      require('../config/db_config.php');
-      try {
-          $db = new \PDO('mysql:host=' .$db_infos['db']['db_host'] .';dbname=' .$db_infos['db']['db_name'], $db_infos['db']['db_username'], $db_infos['db']['db_password']);
-      } catch (\Exception $e) {
-          throw new \Exception('Error creating a database connection ');
-      }
-      $con = $db->prepare("SELECT * FROM comments WHERE status =  0 ORDER BY comment_date DESC");
+      $db = new Connection();
+      $con = $db->db_connect()->prepare("SELECT * FROM comments WHERE status =  0 ORDER BY comment_date DESC");
       $con->execute();
       
       $result = $con->fetchAll(PDO::FETCH_CLASS, 'Comment');
@@ -32,13 +64,8 @@ class Comment extends Entity {
 
     public static function getFromPost($postId)
     {
-      require('../config/db_config.php');
-      try {
-          $db = new \PDO('mysql:host=' .$db_infos['db']['db_host'] .';dbname=' .$db_infos['db']['db_name'], $db_infos['db']['db_username'], $db_infos['db']['db_password']);
-      } catch (\Exception $e) {
-          throw new \Exception('Error creating a database connection ');
-      }
-      $con = $db->prepare("SELECT * FROM comments WHERE post_id = ? ORDER BY comment_date DESC");
+      $db = new Connection();
+      $con = $db->db_connect()->prepare("SELECT * FROM comments WHERE post_id = ? ORDER BY comment_date DESC");
       $con->bindValue(1, $postId, PDO::PARAM_INT);
       $con->execute();
       
@@ -48,13 +75,8 @@ class Comment extends Entity {
 
     public static function getByID($id)
     {
-      require('../config/db_config.php');
-      try {
-          $db = new \PDO('mysql:host=' .$db_infos['db']['db_host'] .';dbname=' .$db_infos['db']['db_name'], $db_infos['db']['db_username'], $db_infos['db']['db_password']);
-      } catch (\Exception $e) {
-          throw new \Exception('Error creating a database connection ');
-      }
-      $con = $db->prepare("SELECT * FROM comments WHERE id = ?");
+      $db = new Connection();
+      $con = $db->db_connect()->prepare("SELECT * FROM comments WHERE id = ?");
       $con->bindValue(1, $id, PDO::PARAM_INT);
       $con->execute();
 

@@ -15,15 +15,47 @@ class User extends Entity {
   
     public $rank;
 
+    public function setID($id){
+      $this->id = $id;
+    }
+    public function getID(){
+      return $this->id;
+    }
+    public function setUsername($username){
+      $this->username = $username;
+    }
+    public function getUsername(){
+      return $this->username;
+    }
+    public function setEmail($email){
+      $this->email = $email;
+    }
+    public function getEmail(){
+      return $this->email;
+    }
+    public function setPassword($password){
+      $this->password = $password;
+    }
+    public function getPassword(){
+      return $this->password;
+    }
+    public function setAvatar($avatar){
+      $this->avatar = $avatar;
+    }
+    public function getAvatar(){
+      return $this->avatar;
+    }
+    public function setRank($rank){
+      $this->rank = $rank;
+    }
+    public function getRank(){
+      return $this->rank;
+    }
+
     public static function getUser($username, $password)
     {
-      require('../config/db_config.php');
-      try {
-          $db = new \PDO('mysql:host=' .$db_infos['db']['db_host'] .';dbname=' .$db_infos['db']['db_name'], $db_infos['db']['db_username'], $db_infos['db']['db_password']);
-      } catch (\Exception $e) {
-          throw new \Exception('Error creating a database connection ');
-      }
-      $con = $db->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
+      $db = new Connection();
+      $con = $db->db_connect()->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
       $con->execute(array($username, $password));
       $result = $con->fetch();
       return $result;

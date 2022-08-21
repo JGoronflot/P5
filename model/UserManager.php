@@ -2,6 +2,7 @@
 
 require_once('../model/Manager.php');
 require_once('../entity/Entity.php');
+require_once('../entity/Connection.php');
 require_once('../entity/User.php');
 
 class UserManager extends Manager
@@ -32,9 +33,9 @@ class UserManager extends Manager
 			if (!$user) {
 				if ($password == $password2) {
 					$user = new User();
-					$user->username = $username;
-					$user->email = $email;
-					$user->password = sha1($password);
+					$user->setUsername($username);
+					$user->setEmail($email);
+					$user->setPassword(sha1($password));
 					$user->save();
 					$success = 'Votre compte a bien été crée :)';
 					require('../view/frontend/registerView.php');

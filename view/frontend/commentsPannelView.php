@@ -25,23 +25,23 @@ $page = 'admin';
                 foreach($comments as $comment) {
                 ?>
                     <tr>
-                        <th><?= ($comment->id) ?></th>
-                        <td><?= strftime("%d/%m/%y", strtotime($comment->comment_date)) ?></td>
+                        <th><?= ($comment->getID()) ?></th>
+                        <td><?= strftime("%d/%m/%y", strtotime($comment->getCommentDate())) ?></td>
                         <td>
                             <?php
-                            if (strlen($comment->author) > 19) {
-                                $comment->author = substr($comment->author, 0, 16) . '...';
+                            if (strlen($comment->getAuthor()) > 19) {
+                                $comment->author = substr($comment->getAuthor(), 0, 16) . '...';
 
-                                echo ($comment->author);
+                                echo ($comment->getAuthor());
                             } else {
-                                echo htmlspecialchars($comment->author);
+                                echo htmlspecialchars($comment->getAuthor());
                             }
                             ?>
                         </td>
-                        <td><?= ($comment->comment) ?></td>
+                        <td><?= ($comment->getComment()) ?></td>
                         <td>
-                            <a href="index.php?action=approveComment&amp;id=<?= ($comment->id) ?>"><i class="fas fa-check-circle fa-2x"></i></a>
-                            <a href="index.php?action=disapproveComment&amp;id=<?= ($comment->id) ?>"><i class="fas fa-times-circle fa-2x"></i></a>
+                            <a href="index.php?action=approveComment&amp;id=<?= ($comment->getID()) ?>"><i class="fas fa-check-circle fa-2x"></i></a>
+                            <a href="index.php?action=disapproveComment&amp;id=<?= ($comment->getID()) ?>"><i class="fas fa-times-circle fa-2x"></i></a>
                         </td>
                     </tr>
                 <?php

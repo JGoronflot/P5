@@ -2,6 +2,7 @@
 
 require_once('../model/Manager.php');
 require_once('../entity/Entity.php');
+require_once('../entity/Connection.php');
 require_once('../entity/Mail.php');
 
 class MailManager extends Manager
@@ -16,10 +17,10 @@ class MailManager extends Manager
     function sendMail($name, $f_name, $email, $subject, $message)
     {
         $mail = new Mail();
-		$mail->name = $name;
-		$mail->f_name = $f_name;
-		$mail->email = $email;
-		$mail->message = $message;
+		$mail->setName($name);
+		$mail->setFullName($f_name);
+		$mail->setEmail($email);
+		$mail->setMessage($message);
 		$mail->save();
         $receiver = 'contact@blabla.fr';
         $name = htmlspecialchars($name);

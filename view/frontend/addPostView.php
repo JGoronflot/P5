@@ -1,9 +1,7 @@
 <?php
-
 $title = 'Blog - Ajouter un article';
 $description = '';
 $page = 'blog';
-
 ?>
 
 <?php ob_start(); ?>
