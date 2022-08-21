@@ -7,14 +7,8 @@ require_once('../entity/User.php');
 
 class UserManager extends Manager
 {
-
-	function __construct()
-	{
-		$this->db = $this->dbConnect();
-	}
-
 	// fonction to connect a user
-	function connectUser($username, $password)
+	public function connectUser($username, $password)
 	{
 		$username_connect = htmlspecialchars($username);
 		$mdp_connect = sha1($password);
@@ -25,7 +19,7 @@ class UserManager extends Manager
 	}
 
 	// fonction to register a user
-	function registerUser($username, $email, $password, $password2)
+	public function registerUser($username, $email, $password, $password2)
 	{
 		$username_lenght = strlen($username);
 		if ($username_lenght <= 255) {

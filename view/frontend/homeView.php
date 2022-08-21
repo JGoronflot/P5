@@ -57,7 +57,7 @@ $page = 'home';
 				</div>
 				<div class="h-post-infos">
 					<span><i class="fas fa-user"></i><?= $post->getAuthor() ?></span>
-					<span><?= (strftime("%d %B %Y", strtotime($post->getCreationDate()))) ?><i class="fas fa-calendar-alt"></i></span>
+					<span><?= utf8_encode(strftime("%d %B %Y", strtotime($post->getCreationDate()))) ?><i class="fas fa-calendar-alt"></i></span>
 				</div>
 			</div>
 

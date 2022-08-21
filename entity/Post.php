@@ -10,6 +10,10 @@ class Post extends Entity {
     public $content;
   
     public $author;
+  
+    public $creation_date;
+  
+    public $update_date;
 
     public function setID($id){
       $this->id = $id;

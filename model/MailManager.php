@@ -7,14 +7,8 @@ require_once('../entity/Mail.php');
 
 class MailManager extends Manager
 {
-
-    function __construct()
-    {
-        $this->db = $this->dbConnect();
-    }
-
     // Fonction to send a mail
-    function sendMail($name, $f_name, $email, $subject, $message)
+    public function sendMail($name, $f_name, $email, $subject, $message)
     {
         $mail = new Mail();
 		$mail->setName($name);

@@ -7,27 +7,22 @@ require_once('../entity/Comment.php');
 
 class CommentManager extends Manager
 {
-	function __construct()
-	{
-		$this->db = $this->dbConnect();
-	}
-
 	// Fonction to get a comment
-	function getComments($postId)
+	public function getComments($postId)
 	{
 		$comments = Comment::getFromPost($postId);
 		return $comments;
 	}
 
 	// Fonction to get all comments
-	function getAllComments()
+	public function getAllComments()
 	{
 		$allcomments = Comment::getAllCommentsStatus0();
 		return $allcomments;
 	}
 
 	// Fonction to submit a comment
-	function submitComment($postId, $author, $message)
+	public function submitComment($postId, $author, $message)
 	{
 		$comment = new Comment();
 		$comment->setAuthor($author);
@@ -39,14 +34,14 @@ class CommentManager extends Manager
 	}
 
 	// Fonction to approve a comment
-	function approveComment($id)
+	public function approveComment($id)
 	{
 		$approvecomment = $this->db->prepare('UPDATE comments SET status = 1 WHERE id = ?');
 		$affectedLines = $approvecomment->execute(array($id));
 	}
 
 	// Fonction to disapprove a comment
-	function disapproveComment($id)
+	public function disapproveComment($id)
 	{
 		Comment::getbyID($id)->remove();
 	}

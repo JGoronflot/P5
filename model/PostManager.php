@@ -7,34 +7,29 @@ require_once('../entity/Connection.php');
 
 class PostManager extends Manager
 {
-	function __construct()
-	{
-		$this->db = $this->dbConnect();
-	}
-
 	// Fonction to get 3 lasts posts
-	function getHomePosts()
+	public function getHomePosts()
 	{
 		$posts = Post::getLastestPosts(3);
 		return $posts;
 	}
 
 	// Fonction to get all posts
-	function getAllPosts()
+	public function getAllPosts()
 	{
 		$posts = Post::getAll();
 		return $posts;
 	}
 
 	// Fonction to get a post
-	function getPost($postId)
+	public function getPost($postId)
 	{
 		$post = Post::getbyID($postId);
 		return $post;
 	}
 
 	// Fonction to add post
-	function addPost($author, $title, $content)
+	public function addPost($author, $title, $content)
 	{
 		$post = new Post();
 		$post->setTitle($title);
@@ -49,7 +44,7 @@ class PostManager extends Manager
 	}
 
 	// Fonction to confirm edit post
-	function confirmEditPost($postId, $author, $title, $content)
+	public function confirmEditPost($postId, $author, $title, $content)
 	{
 		$editpost = $this->db->prepare('UPDATE posts SET title = ?, content = ?, author = ?, update_date = NOW() WHERE id = ? ');
 		$affectedLines = $editpost->execute(array($title, $content, $author, $postId));
@@ -61,7 +56,7 @@ class PostManager extends Manager
 	}
 
 	// Fonction to delete post
-	function deletePost($postId)
+	public function deletePost($postId)
 	{
 		Post::getbyID($postId)->remove();
 		$path = 'img/blog/thumbnails/' . $postId . '.jpg';

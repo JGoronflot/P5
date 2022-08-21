@@ -45,7 +45,7 @@ foreach($posts as $post) {
                 ?>
             </p>
             <div class="more">
-                <span><?= ($post->getAuthor()) . ' - ' . strftime("%d %B %Y", strtotime($post->getCreationDate)) ?></span>
+                <span><?= ($post->getAuthor()) . ' - ' . utf8_encode(strftime("%d %B %Y", strtotime($post->getCreationDate()))) ?></span>
             </div>
         </div>
     </div>
