@@ -35,6 +35,8 @@ class PostManager extends Manager
 		$post->setTitle($title);
 		$post->setContent($content);
 		$post->setAuthor($author);
+		$post->setCreationDate(date("y-m-d h:i:s"));
+		$post->setUpdateDate(date("y-m-d h:i:s"));
 		$post->save();
 		if (isset($_FILES['thumbnail']) && !empty($_FILES['thumbnail']['name'])) {
 			$path = 'img/blog/thumbnails/' . $post->id . '.jpg';
@@ -46,7 +48,8 @@ class PostManager extends Manager
 	// Fonction to confirm edit post
 	public function confirmEditPost($postId, $author, $title, $content)
 	{
-		$editpost = $this->db->prepare('UPDATE posts SET title = ?, content = ?, author = ?, update_date = NOW() WHERE id = ? ');
+		$db = new Connection();
+		$editpost = $db->dbConnect()->prepare('UPDATE posts SET title = ?, content = ?, author = ?, update_date = NOW() WHERE id = ? ');
 		$affectedLines = $editpost->execute(array($title, $content, $author, $postId));
 		if (isset($_FILES['thumbnail']) && !empty($_FILES['thumbnail']['name'])) {
 			$path = 'img/blog/thumbnails/' . $postId . '.jpg';

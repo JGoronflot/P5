@@ -37,12 +37,13 @@ class Entity {
         $sqlQuery = '';
     
         if ($this->id > 0) {
-          $sqlQuery = 'UPDATE `'.$tableName.'` SET '.$setClause.' WHERE id = '.$this->id;
+          $sqlQuery = self::$db->prepare('UPDATE `'.$tableName.'` SET '.$setClause.' WHERE id = :id');
+          $sqlQuery->bindParam(':id', $id, PDO::PARAM_INT);
         } else {
-          $sqlQuery = 'INSERT INTO `'.$tableName.'` SET '.$setClause;
+          $sqlQuery = self::$db->prepare('INSERT INTO `'.$tableName.'` SET '.$setClause);
         }
         
-        $result = self::$db->exec($sqlQuery);
+        $result = $sqlQuery->execute();
         
         $this->id = self::$db->lastInsertId();
     

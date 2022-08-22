@@ -74,10 +74,11 @@ class Post extends Entity {
       return $result;
     }
 
-    public static function getLastestPosts($int)
+    public static function getLastestPosts($max)
     {
       $db = new Connection();
-      $con = $db->dbConnect()->prepare("SELECT * FROM posts ORDER BY creation_date DESC LIMIT ".$int);
+      $con = $db->dbConnect()->prepare("SELECT * FROM posts ORDER BY creation_date DESC LIMIT :max");
+      $con->bindParam(':max', $max, PDO::PARAM_INT);
       $con->execute();
       
       $result = $con->fetchAll(PDO::FETCH_CLASS, 'Post');

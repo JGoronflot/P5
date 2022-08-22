@@ -28,7 +28,7 @@ class CommentManager extends Manager
 		$comment->setAuthor($author);
 		$comment->setComment($message);
 		$comment->setPostID($postId);
-		$comment->setCommentDate(date("y-m-d h:i:s"));
+		$comment->setCommentDate(date("y-m-d H:i:s"));
 		$comment->save();
 		return $comment;
 	}
@@ -36,13 +36,16 @@ class CommentManager extends Manager
 	// Fonction to approve a comment
 	public function approveComment($id)
 	{
-		$approvecomment = $this->db->prepare('UPDATE comments SET status = 1 WHERE id = ?');
+		$db = new Connection();
+		$approvecomment = $db->dbConnect()->prepare('UPDATE comments SET status = 1 WHERE id = ?');
 		$affectedLines = $approvecomment->execute(array($id));
 	}
 
 	// Fonction to disapprove a comment
 	public function disapproveComment($id)
 	{
-		Comment::getbyID($id)->remove();
+		$db = new Connection();
+		$disapproveComment = $db->dbConnect()->prepare('DELETE FROM comments WHERE id = ?');
+		$disapproveComment->execute(array($id));
 	}
 }
