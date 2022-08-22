@@ -26,7 +26,7 @@ $page = 'admin';
                 ?>
                     <tr>
                         <th><?= ($comment->getID()) ?></th>
-                        <td><?= strftime("%d/%m/%y", strtotime($comment->getCommentDate())) ?></td>
+                        <td><?= utf8_encode(strftime("%d/%m/%y", strtotime($comment->getCommentDate()))) ?></td>
                         <td>
                             <?php
                             if (strlen($comment->getAuthor()) > 19) {

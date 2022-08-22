@@ -21,11 +21,11 @@ $page = 'blog';
 </div>
 <div class="post-view col-md-6">
     <h1 class="title"><?= ($post->getTitle()) ?></h1>
-    <span>Par <?= ($post->getAuthor()) ?> - le <?= strftime("%d %B %Y à %Hh%M", strtotime($post->getCreationDate())) ?></span>
+    <span>Par <?= ($post->getAuthor()) ?> - le <?= utf8_encode(strftime("%d %B %Y à %HH%M", strtotime($post->getCreationDate()))) ?></span>
     <div class="content">
         <p><?= nl2br(($post->getContent())) ?></p>
     </div>
-    <span class="last-update">Dernière modification : <?= (strftime("%d %B %Y à %Hh%M", strtotime($post->getUpdateDate()))) ?></span>
+    <span class="last-update">Dernière modification : <?= utf8_encode(strftime("%d %B %Y à %HH%M", strtotime($post->getUpdateDate()))) ?></span>
 </div>
 
 <hr class="col-md-6 mx-auto">
@@ -57,7 +57,7 @@ $page = 'blog';
                 <div>
                     <span class="author"><?= ($comment->getAuthor()) ?></span>
                     <br>
-                    <span class="comment-date">le <?= (strftime("%d/%m/%Y à %Hh%M", strtotime($comment->getCommentDate()))) ?></span>
+                    <span class="comment-date">le <?= utf8_encode((strftime("%d/%m/%Y à %HH%M", strtotime($comment->getCommentDate())))) ?></span>
                 </div>
                 <p class="content"><?= (nl2br(htmlspecialchars($comment->getComment()))) ?></p>
             </div>
