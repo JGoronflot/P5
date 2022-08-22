@@ -35,8 +35,8 @@ class PostManager extends Manager
 		$post->setTitle($title);
 		$post->setContent($content);
 		$post->setAuthor($author);
-		$post->setCreationDate(date("y-m-d h:i:s"));
-		$post->setUpdateDate(date("y-m-d h:i:s"));
+		$post->setCreationDate(date("y-m-d H:i:s"));
+		$post->setUpdateDate(date("y-m-d H:i:s"));
 		$post->save();
 		if (isset($_FILES['thumbnail']) && !empty($_FILES['thumbnail']['name'])) {
 			$path = 'img/blog/thumbnails/' . $post->id . '.jpg';
